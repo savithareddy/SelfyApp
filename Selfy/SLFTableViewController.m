@@ -9,7 +9,7 @@
 #import "SLFTableViewController.h"
 #import "SLFTableViewCell.h"
 #import "SLFCameraViewController.h"
-//#import <Parse/Parse.h>
+#import <Parse/Parse.h>
 
 @interface SLFTableViewController ()
 
@@ -52,14 +52,14 @@
                                                                
                 ] mutableCopy];
         
-//        PFObject *testObject = [PFObject objectWithClassName:@"user"];
-//        testObject[@"name"] = @"savitha";
-//        [testObject saveInBackground];
-//        
-//        PFUser *user = [PFUser currentUser];
-//        user.username = @"savitha";
-//        user.password = @"pass"; //any value for password
-//        [user saveInBackground];
+        PFObject *testObject = [PFObject objectWithClassName:@"user"];
+        testObject[@"name"] = @"savitha";
+        [testObject saveInBackground];
+        
+        PFUser *user = [PFUser currentUser];
+        user.username = @"savitha";
+        user.password = @"pass"; //any value for password
+        [user saveInBackground];
         
        
          

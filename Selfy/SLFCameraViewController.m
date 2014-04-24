@@ -7,7 +7,7 @@
 //
 
 #import "SLFCameraViewController.h"
-//#import <Parse/Parse.h>
+#import <Parse/Parse.h>
 
 @interface SLFCameraViewController () <UITextViewDelegate>
 
@@ -109,15 +109,15 @@
     captionField.text =@"";
 [captionField resignFirstResponder];
     
-//    UIImage *images = [UIImage imageNamed:@"Avatar.png"];
-//    NSData *imageData = UIImagePNGRepresentation(images);
-//    
-//    PFFile *imageFile = [PFFile fileWithName:@"Avatar.png" data:imageData];
-//    
-//    PFObject *userPhoto = [PFObject objectWithClassName:@"UserSelfy"];
-//    userPhoto[@"imageName"] = @"My App in Progress!";
-//    userPhoto[@"imageFile"] = imageFile;
-//    [userPhoto saveInBackground];
+    UIImage *images = [UIImage imageNamed:@"Avatar.png"];
+    NSData *imageData = UIImagePNGRepresentation(images);
+    
+    PFFile *imageFile = [PFFile fileWithName:@"Avatar.png" data:imageData];
+    
+    PFObject *userPhoto = [PFObject objectWithClassName:@"UserSelfy"];
+    userPhoto[@"imageName"] = @"My App in Progress!";
+    userPhoto[@"imageFile"] = imageFile;
+    [userPhoto saveInBackground];
 
 }
 

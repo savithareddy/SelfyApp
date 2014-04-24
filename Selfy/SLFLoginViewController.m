@@ -8,7 +8,7 @@
 
 #import "SLFLoginViewController.h"
 #import "SLFTableViewController.h"
-//#import <Parse/Parse.h>
+#import <Parse/Parse.h>
 
 @interface SLFLoginViewController ()
 
@@ -72,20 +72,29 @@
 -(void) pressSubmit
 {
     
-    SLFTableViewController *viewController1 = [[SLFTableViewController alloc] initWithStyle:UITableViewStylePlain];
-    [self.navigationController pushViewController:viewController1 animated:YES];
-       userName.text = @"";
-    password.text = @"";
-    [userName resignFirstResponder];
-    [password resignFirstResponder];
+//    SLFTableViewController *viewController1 = [[SLFTableViewController alloc] initWithStyle:UITableViewStylePlain];
+//    [self.navigationController pushViewController:viewController1 animated:YES];
+//       userName.text = @"";
+//    password.text = @"";
+//    [userName resignFirstResponder];
+//    [password resignFirstResponder];
     
-   
-   
-   
-//    PFUser *user = [PFUser currentUser];
-//    user.username = @"reddy";
-//    user.password = @"password"; //any value for password
-//    [user saveInBackground];
+    PFUser *user = [PFUser currentUser];
+    user.username = userName.text;
+    user.password = password.text; //any value for password
+    
+    userName.text = nil;
+    password.text= nil;
+    [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if(error == nil)
+        {
+            self.navigationController.navigationBarHidden = NO;
+            self.navigationController.viewControllers = @[[[SLFTableViewController alloc] initWithStyle:UITableViewStylePlain]];
+        }else{
+//            error.userInfo[@"error"];
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ERROR" message:@"Not Valid UserName or Password" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                  }
+    }];
     
 }
 - (void)viewDidLoad
