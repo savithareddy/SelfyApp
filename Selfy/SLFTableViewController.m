@@ -63,7 +63,7 @@
         
        
          
-    self.tableView.rowHeight = self.tableView.frame.size.width;
+    self.tableView.rowHeight = self.tableView.frame.size.width+100;
         
     }
     return self;
@@ -88,7 +88,7 @@
     settingButton = [[UIButton alloc]initWithFrame:CGRectMake(20, 10, 30, 30)];
     settingButton.backgroundColor = [UIColor blackColor];
     [settingButton setTitle:@" S " forState:UIControlStateNormal];
-    [settingButton addTarget:self action:@selector(pressSubmit) forControlEvents:UIControlEventTouchUpInside];
+    [settingButton addTarget:self action:@selector(pressSetting) forControlEvents:UIControlEventTouchUpInside];
     settingButton.layer.cornerRadius = 15;
     [self.view addSubview:settingButton];
     
@@ -101,7 +101,7 @@
     
 }
 
--(void) pressSubmit
+-(void) pressSetting
 {
     
 }

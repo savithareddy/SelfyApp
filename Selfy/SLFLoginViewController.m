@@ -8,7 +8,7 @@
 
 #import "SLFLoginViewController.h"
 #import "SLFTableViewController.h"
-//#import <Parse/Parse.h>
+#import <Parse/Parse.h>
 
 @interface SLFLoginViewController ()
 
@@ -29,6 +29,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    
     if (self) {
         loginImage = [[UIImageView alloc] initWithFrame:CGRectMake(120, 130, 30, 30)];
         loginImage.image = [UIImage imageNamed:@"Avatar.png"];
@@ -71,21 +72,20 @@
 
 -(void) pressSubmit
 {
-    
+
     SLFTableViewController *viewController1 = [[SLFTableViewController alloc] initWithStyle:UITableViewStylePlain];
     [self.navigationController pushViewController:viewController1 animated:YES];
-       userName.text = @"";
+    userName.text = @"";
     password.text = @"";
     [userName resignFirstResponder];
     [password resignFirstResponder];
     
-   
-   
-   
-//    PFUser *user = [PFUser currentUser];
-//    user.username = @"reddy";
-//    user.password = @"password"; //any value for password
-//    [user saveInBackground];
+    
+    PFUser *user = [PFUser currentUser];
+    user.username = @"reddy";
+    user.password = @"password";//any value for password
+    [user saveInBackground];
+
     
 }
 - (void)viewDidLoad

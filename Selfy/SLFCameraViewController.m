@@ -7,6 +7,7 @@
 //
 
 #import "SLFCameraViewController.h"
+#import "SLFTableViewController.h"
 //#import <Parse/Parse.h>
 
 @interface SLFCameraViewController () <UITextViewDelegate>
@@ -108,6 +109,9 @@
 {
     captionField.text =@"";
 [captionField resignFirstResponder];
+    SLFTableViewController *viewController3 = [[SLFTableViewController alloc] initWithStyle:UITableViewStylePlain];
+    [self.navigationController pushViewController:viewController3 animated:YES];
+
     
 //    UIImage *images = [UIImage imageNamed:@"Avatar.png"];
 //    NSData *imageData = UIImagePNGRepresentation(images);
@@ -125,6 +129,8 @@
 {
     captionField.text =@"";
     [captionField resignFirstResponder];
+    
+    
 }
 
 - (void)viewDidLoad
