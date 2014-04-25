@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface SLFTableViewController : UITableViewController
+@property (nonatomic) NSMutableArray *selfiesArray;
+-(void) createNewImage: (NSString *) newImage;
 
 @end

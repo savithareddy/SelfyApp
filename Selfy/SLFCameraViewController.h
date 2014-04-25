@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class SLFTableViewController;
 @interface SLFCameraViewController : UIViewController
+-(void) addTableViewController : (SLFTableViewController *)viewController;
 
 @end

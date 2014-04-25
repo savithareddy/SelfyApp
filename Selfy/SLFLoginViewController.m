@@ -78,6 +78,14 @@
 //    password.text = @"";
 //    [userName resignFirstResponder];
 //    [password resignFirstResponder];
+    UIView *alertCircle = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width+50, self.view.frame.size.height-40)];
+    alertCircle.backgroundColor = [UIColor grayColor];
+    alertCircle.alpha = 0.4;
+   [self.view addSubview:alertCircle];
+    UIActivityIndicatorView *loginCircle = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    loginCircle.center = alertCircle.center;
+    [ loginCircle startAnimating];
+    [alertCircle addSubview:loginCircle];
     
     PFUser *user = [PFUser currentUser];
     user.username = userName.text;
@@ -89,14 +97,21 @@
         if(error == nil)
         {
             self.navigationController.navigationBarHidden = NO;
-            self.navigationController.viewControllers = @[[[SLFTableViewController alloc] initWithStyle:UITableViewStylePlain]];
+        [alertCircle removeFromSuperview];
+            self.navigationController.viewControllers = @[[[SLFTableViewController alloc] initWithStyle:UITableViewStylePlain
+                                                           ]];
         }else{
-//            error.userInfo[@"error"];
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ERROR" message:@"Not Valid UserName or Password" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-                  }
+          //error.userInfo[@"error"];
+            [alertCircle removeFromSuperview];
+
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ERROR" message:@"Not Valid UserName or Password" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            
+            [alert show];
+            //[self.view addSubview:alert];
+                              }
     }];
-    
 }
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

@@ -19,18 +19,18 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        selfyView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 60, 280, 280)];
+        selfyView = [[UIImageView alloc] initWithFrame:CGRectMake(50, 60, 230, 200)];
         //selfyView.contentMode = UIViewContentModeScaleAspectFill;
         //selfyView.clipsToBounds = YES;
         selfyView.layer.masksToBounds=YES;
        [self.contentView addSubview:selfyView];
         
-        selfyCaption = [[UILabel alloc] initWithFrame:CGRectMake(70, 350, 100, 30)];
+        selfyCaption = [[UILabel alloc] initWithFrame:CGRectMake(110, 265, 100, 30)];
         //selfyCaption.text = @"Awesome !!!";
         selfyCaption.font = [UIFont fontWithName:@"Times New Roman" size:15];
        [self.contentView addSubview:selfyCaption];
         
-        avatarView =[[UIImageView alloc] initWithFrame:CGRectMake(30, 350, 30, 30)];
+        avatarView =[[UIImageView alloc] initWithFrame:CGRectMake(70, 265, 30, 30)];
         avatarView.layer.cornerRadius = 15;
         //avatarView.contentMode = UIViewContentModeScaleAspectFill;
        // avatarView.clipsToBounds = YES;

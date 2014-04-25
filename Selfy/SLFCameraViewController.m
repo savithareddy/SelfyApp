@@ -24,6 +24,7 @@
     UIButton *settingButton;
     UIButton *cancelButton;
     UIView *newForm;
+    SLFTableViewController *TVC;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -77,6 +78,8 @@
         
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapScreen)];
         [self.view addGestureRecognizer:tap];
+        UITapGestureRecognizer *tapImage = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapImage)];
+        [image addGestureRecognizer:tapImage];
     }
     return self;
 }
@@ -89,6 +92,16 @@
         newForm.frame = self.view.frame;
     }];
     
+}
+
+-(void)tapImage
+{
+    [UIView animateWithDuration:0.2 animations:^{
+         image.image = [UIImage imageNamed:@"squares.png"];
+            }];
+    
+
+   
 }
 -(void) textViewDidBeginEditing:(UITextView *)textView
 {
@@ -109,13 +122,13 @@
     captionField.text =@"";
 [captionField resignFirstResponder];
     
-    UIImage *images = [UIImage imageNamed:@"Avatar.png"];
+    UIImage *images = [UIImage imageNamed:@"squares.png"];
     NSData *imageData = UIImagePNGRepresentation(images);
     
-    PFFile *imageFile = [PFFile fileWithName:@"Avatar.png" data:imageData];
+    PFFile *imageFile = [PFFile fileWithName:@"squares.png" data:imageData];
     
     PFObject *userPhoto = [PFObject objectWithClassName:@"UserSelfy"];
-    userPhoto[@"imageName"] = @"My App in Progress!";
+    userPhoto[@"imageName"] = @"SelfyApp in Progress!";
     userPhoto[@"imageFile"] = imageFile;
     [userPhoto saveInBackground];
 

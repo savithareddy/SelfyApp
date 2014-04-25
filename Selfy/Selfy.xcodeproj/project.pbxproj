@@ -36,6 +36,8 @@
 		91284F4C1906D4DE00D5C8B5 /* SLFLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91284F4B1906D4DE00D5C8B5 /* SLFLoginViewController.m */; };
 		91284F4F1906D50900D5C8B5 /* SLFCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91284F4E1906D50900D5C8B5 /* SLFCameraViewController.m */; };
 		91284F511906E96400D5C8B5 /* camera.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 91284F501906E96400D5C8B5 /* camera.jpeg */; };
+		913EB674190A0BD300F23416 /* dice.png in Resources */ = {isa = PBXBuildFile; fileRef = 913EB673190A0BD300F23416 /* dice.png */; };
+		913EB676190A0BE100F23416 /* squares.png in Resources */ = {isa = PBXBuildFile; fileRef = 913EB675190A0BE100F23416 /* squares.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +88,8 @@
 		91284F4D1906D50900D5C8B5 /* SLFCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFCameraViewController.h; sourceTree = "<group>"; };
 		91284F4E1906D50900D5C8B5 /* SLFCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFCameraViewController.m; sourceTree = "<group>"; };
 		91284F501906E96400D5C8B5 /* camera.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = camera.jpeg; sourceTree = "<group>"; };
+		913EB673190A0BD300F23416 /* dice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice.png; sourceTree = "<group>"; };
+		913EB675190A0BE100F23416 /* squares.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = squares.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +218,8 @@
 		9116CC7319059FEF00211F8C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				913EB675190A0BE100F23416 /* squares.png */,
+				913EB673190A0BD300F23416 /* dice.png */,
 				91284F501906E96400D5C8B5 /* camera.jpeg */,
 				910B9792190620AC008F10C7 /* Images.jpeg */,
 				910B979019060450008F10C7 /* Avatar.png */,
@@ -299,6 +305,8 @@
 			files = (
 				9116CC451905898200211F8C /* InfoPlist.strings in Resources */,
 				910B9793190620AC008F10C7 /* Images.jpeg in Resources */,
+				913EB674190A0BD300F23416 /* dice.png in Resources */,
+				913EB676190A0BE100F23416 /* squares.png in Resources */,
 				910B979119060450008F10C7 /* Avatar.png in Resources */,
 				9116CC4D1905898200211F8C /* Images.xcassets in Resources */,
 				91284F511906E96400D5C8B5 /* camera.jpeg in Resources */,

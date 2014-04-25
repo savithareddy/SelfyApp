@@ -21,7 +21,7 @@
     UILabel *nameLabel;
     UIButton *settingButton;
     UIButton *addButton;
-    NSArray *selfies;
+   // NSArray *selfies;
     
 }
 
@@ -39,7 +39,7 @@
 //                        @"selfy_id" : @""
 //                        }
 //                   ]mutableCopy];
-        selfies = [@[
+        self.selfiesArray= [@[
                      @{
                                               
                      @"image" : @"http://1.bp.blogspot.com/-S4MUYSjsw4E/Tb9wsgCVegI/AAAAAAAAAjg/fOhEnXh4_0U/s1600/IMG_3535.JPG",
@@ -63,7 +63,7 @@
         
        
          
-    self.tableView.rowHeight = self.tableView.frame.size.width;
+    self.tableView.rowHeight = self.tableView.frame.size.width-20;
         
     }
     return self;
@@ -123,7 +123,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [selfies count];
+    return [self.selfiesArray count];
 }
 
 
@@ -137,20 +137,22 @@
         cell = [[ SLFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
     
-    cell.selfyInfo = selfies[indexPath.row];
-    
-    
+    cell.selfyInfo = self.selfiesArray[indexPath.row];
     
     return cell;
     
 }
-
-//-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+//-(void)createNewImage:(NSString *)newImage
 //{
-//    
-//    
+//    //if ([newImage isEqualToString:@""]) return;
+//    [self.selfiesArray insertObject:@{@"image": @"squares.png",
+//                                   @"caption" :
+//                                   } atIndex:0];
+//    [self.tableView reloadData];
 //
+//    
 //}
+
 
 
 -(BOOL) prefersStatusBarHidden
