@@ -55,49 +55,52 @@
         PFObject *testObject = [PFObject objectWithClassName:@"user"];
         testObject[@"name"] = @"savitha";
         [testObject saveInBackground];
-        
-        PFUser *user = [PFUser currentUser];
-        user.username = @"savitha";
-        user.password = @"pass"; //any value for password
-        [user saveInBackground];
-        
+//        
+//        PFUser *user = [PFUser currentUser];
+//        user.username = @"savitha";
+//        user.password = @"pass"; //any value for password
+//        [user saveInBackground];
+
+        UIBarButtonItem *addNewSelfyButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(openNewSelfy)];
+        self.navigationItem.rightBarButtonItem = addNewSelfyButton;
        
          
-    self.tableView.rowHeight = self.tableView.frame.size.width;
+    self.tableView.rowHeight = self.tableView.frame.size.width-40;
         
     }
     return self;
 }
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
     
-    header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
-    header.backgroundColor = [UIColor lightGrayColor];
-    header.alpha = 0.8;
-    [self.view addSubview:header];
-    
-    nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(130, 10, 60, 30)];
-    nameLabel.text = @"SELFY";
-    nameLabel.textColor = [UIColor blackColor];
-    nameLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:15];
-    [self.view addSubview:nameLabel];
-    
-    settingButton = [[UIButton alloc]initWithFrame:CGRectMake(20, 10, 30, 30)];
-    settingButton.backgroundColor = [UIColor blackColor];
-    [settingButton setTitle:@" S " forState:UIControlStateNormal];
-    [settingButton addTarget:self action:@selector(pressSubmit) forControlEvents:UIControlEventTouchUpInside];
-    settingButton.layer.cornerRadius = 15;
-    [self.view addSubview:settingButton];
-    
-    addButton = [[UIButton alloc]initWithFrame:CGRectMake(270, 10, 30, 30)];
-    addButton.backgroundColor = [UIColor blackColor];
-    addButton.layer.cornerRadius = 15;
-    [addButton setTitle:@" + " forState:UIControlStateNormal];
-    [addButton addTarget:self action:@selector(pressAdd) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:addButton];
+//    header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
+//    header.backgroundColor = [UIColor lightGrayColor];
+//    header.alpha = 0.8;
+//    [self.view addSubview:header];
+//    
+//    nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(130, 10, 60, 30)];
+//    nameLabel.text = @"SELFY";
+//    nameLabel.textColor = [UIColor blackColor];
+//    nameLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:15];
+//    [self.view addSubview:nameLabel];
+//    
+//    settingButton = [[UIButton alloc]initWithFrame:CGRectMake(20, 10, 30, 30)];
+//    settingButton.backgroundColor = [UIColor blackColor];
+//    [settingButton setTitle:@" S " forState:UIControlStateNormal];
+//    [settingButton addTarget:self action:@selector(pressSubmit) forControlEvents:UIControlEventTouchUpInside];
+//    settingButton.layer.cornerRadius = 15;
+//    [self.view addSubview:settingButton];
+//    
+//    addButton = [[UIButton alloc]initWithFrame:CGRectMake(270, 10, 30, 30)];
+//    addButton.backgroundColor = [UIColor blackColor];
+//    addButton.layer.cornerRadius = 15;
+//    [addButton setTitle:@" + " forState:UIControlStateNormal];
+//    [addButton addTarget:self action:@selector(pressAdd) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:addButton];
     
 }
 
@@ -105,7 +108,7 @@
 {
     
 }
--(void) pressAdd
+-(void)openNewSelfy
 {
     SLFCameraViewController *viewController2 = [[SLFCameraViewController alloc]initWithNibName:nil bundle:nil];
     //UINavigationController *navController2 = [[UINavigationController alloc]initWithRootViewController:viewController2];

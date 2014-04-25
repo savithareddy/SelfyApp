@@ -106,20 +106,24 @@
 
 -(void) pressSubmit1
 {
-    captionField.text =@"";
-[captionField resignFirstResponder];
+    //captionField.text =@"";
+    [captionField resignFirstResponder];
     
-    UIImage *images = [UIImage imageNamed:@"Avatar.png"];
+    UIImage *images = [UIImage imageNamed:@"squares.png"];
     NSData *imageData = UIImagePNGRepresentation(images);
     
-    PFFile *imageFile = [PFFile fileWithName:@"Avatar.png" data:imageData];
+    PFFile *imageFile = [PFFile fileWithName:@"squares.png" data:imageData]; // cool squares also can be written instead of squares.png
     
     PFObject *userPhoto = [PFObject objectWithClassName:@"UserSelfy"];
-    userPhoto[@"imageName"] = @"My App in Progress!";
-    userPhoto[@"imageFile"] = imageFile;
+    
+    userPhoto[@"caption"]= captionField.text; //to use data from textfield send to parse
+    userPhoto[@"image"] = imageFile; // not creating a row here but
+    //userPhoto[@"imageName"] = @"SelfyApp in Progress!";
+    //userPhoto[@"imageFile"] = imageFile;
     [userPhoto saveInBackground];
-
+    
 }
+
 
 -(void) pressCancel1
 {

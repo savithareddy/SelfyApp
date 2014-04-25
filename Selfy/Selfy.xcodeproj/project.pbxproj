@@ -23,6 +23,8 @@
 		9116CC601905898200211F8C /* SelfyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9116CC5F1905898200211F8C /* SelfyTests.m */; };
 		9116CC6B190589CB00211F8C /* SLFTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9116CC6A190589CB00211F8C /* SLFTableViewController.m */; };
 		9116CC6E19058A2100211F8C /* SLFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9116CC6D19058A2100211F8C /* SLFTableViewCell.m */; };
+		9126C1B5190A9EC9004F7413 /* dice.png in Resources */ = {isa = PBXBuildFile; fileRef = 9126C1B3190A9EC9004F7413 /* dice.png */; };
+		9126C1B6190A9EC9004F7413 /* squares.png in Resources */ = {isa = PBXBuildFile; fileRef = 9126C1B4190A9EC9004F7413 /* squares.png */; };
 		91284F371906B89600D5C8B5 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91284F361906B89600D5C8B5 /* Parse.framework */; };
 		91284F391906BD3300D5C8B5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91284F381906BD3300D5C8B5 /* AudioToolbox.framework */; };
 		91284F3B1906BD5100D5C8B5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91284F3A1906BD5100D5C8B5 /* CFNetwork.framework */; };
@@ -71,6 +73,8 @@
 		9116CC6A190589CB00211F8C /* SLFTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFTableViewController.m; sourceTree = "<group>"; };
 		9116CC6C19058A2100211F8C /* SLFTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFTableViewCell.h; sourceTree = "<group>"; };
 		9116CC6D19058A2100211F8C /* SLFTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFTableViewCell.m; sourceTree = "<group>"; };
+		9126C1B3190A9EC9004F7413 /* dice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dice.png; path = ../../../dice.png; sourceTree = "<group>"; };
+		9126C1B4190A9EC9004F7413 /* squares.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = squares.png; path = ../../../squares.png; sourceTree = "<group>"; };
 		91284F361906B89600D5C8B5 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		91284F381906BD3300D5C8B5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		91284F3A1906BD5100D5C8B5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -214,6 +218,8 @@
 		9116CC7319059FEF00211F8C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9126C1B3190A9EC9004F7413 /* dice.png */,
+				9126C1B4190A9EC9004F7413 /* squares.png */,
 				91284F501906E96400D5C8B5 /* camera.jpeg */,
 				910B9792190620AC008F10C7 /* Images.jpeg */,
 				910B979019060450008F10C7 /* Avatar.png */,
@@ -299,6 +305,8 @@
 			files = (
 				9116CC451905898200211F8C /* InfoPlist.strings in Resources */,
 				910B9793190620AC008F10C7 /* Images.jpeg in Resources */,
+				9126C1B5190A9EC9004F7413 /* dice.png in Resources */,
+				9126C1B6190A9EC9004F7413 /* squares.png in Resources */,
 				910B979119060450008F10C7 /* Avatar.png in Resources */,
 				9116CC4D1905898200211F8C /* Images.xcassets in Resources */,
 				91284F511906E96400D5C8B5 /* camera.jpeg in Resources */,
