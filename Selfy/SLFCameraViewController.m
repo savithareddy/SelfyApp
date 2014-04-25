@@ -31,27 +31,29 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
-        newForm = [[UIView alloc] initWithFrame:self.view.frame];
+        self.view.backgroundColor = [UIColor lightGrayColor];
+        newForm = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, self.view.frame.size.height)];
+        //newForm.backgroundColor = [UIColor redColor];
         [self.view addSubview:newForm];
         
         
-        header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
-        header.backgroundColor = [UIColor lightGrayColor];
-        header.alpha = 0.8;
-        [self.view addSubview:header];
-        
-        nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(130, 10, 60, 30)];
-        nameLabel.text = @"SELFY";
-        nameLabel.textColor = [UIColor blackColor];
-        nameLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:15];
-        [header addSubview:nameLabel];
-        
-        cancelButton = [[UIButton alloc]initWithFrame:CGRectMake(270, 10, 30, 30)];
-        cancelButton.backgroundColor = [UIColor blackColor];
-        cancelButton.layer.cornerRadius = 15;
-        [cancelButton setTitle:@"X" forState:UIControlStateNormal];
-        [cancelButton addTarget:self action:@selector(pressAdd) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:cancelButton];
+//        header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
+//        header.backgroundColor = [UIColor lightGrayColor];
+//        header.alpha = 0.8;
+//        [self.view addSubview:header];
+//        
+//        nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(130, 10, 60, 30)];
+//        nameLabel.text = @"SELFY";
+//        nameLabel.textColor = [UIColor blackColor];
+//        nameLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:15];
+//        [header addSubview:nameLabel];
+//        
+//        cancelButton = [[UIButton alloc]initWithFrame:CGRectMake(270, 10, 30, 30)];
+//        cancelButton.backgroundColor = [UIColor blackColor];
+//        cancelButton.layer.cornerRadius = 15;
+//        [cancelButton setTitle:@"X" forState:UIControlStateNormal];
+//        [cancelButton addTarget:self action:@selector(pressAdd) forControlEvents:UIControlEventTouchUpInside];
+//        [self.view addSubview:cancelButton];
         
         imageArea = [[UIView alloc] initWithFrame:CGRectMake(10, 60, 300, 300)];
         imageArea.backgroundColor = [UIColor whiteColor];
@@ -129,12 +131,25 @@
 {
     captionField.text =@"";
     [captionField resignFirstResponder];
+    
+  
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   }
+    
+    UIBarButtonItem *cancelNewSelfyButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelNewSelfy)];
+    //cancelNewSelfyButton.color = [UIColor blackColor];
+    cancelNewSelfyButton.tintColor = [UIColor whiteColor];
+    self.navigationItem.rightBarButtonItem = cancelNewSelfyButton;
+    
+       }
+
+-(void) cancelNewSelfy
+{
+    
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -152,10 +167,11 @@
     // Pass the selected object to the new view controller.
 }
 */
--(BOOL) prefersStatusBarHidden
-{
-    return YES;
-}
+
+//-(BOOL) prefersStatusBarHidden
+//{
+//    return YES;
+//}
 
 
 @end

@@ -101,8 +101,10 @@
 //    [addButton setTitle:@" + " forState:UIControlStateNormal];
 //    [addButton addTarget:self action:@selector(pressAdd) forControlEvents:UIControlEventTouchUpInside];
 //    [self.view addSubview:addButton];
+    [self setNeedsStatusBarAppearanceUpdate];
+
     
-}
+    }
 
 -(void) pressSubmit
 {
@@ -110,12 +112,24 @@
 }
 -(void)openNewSelfy
 {
-    SLFCameraViewController *viewController2 = [[SLFCameraViewController alloc]initWithNibName:nil bundle:nil];
-    //UINavigationController *navController2 = [[UINavigationController alloc]initWithRootViewController:viewController2];
-    [self.navigationController pushViewController:viewController2 animated:YES];
-//    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
+    
+  SLFCameraViewController *viewController2 = [[SLFCameraViewController alloc]initWithNibName:nil bundle:nil];
+    UINavigationController *nc = [[UINavigationController alloc]initWithRootViewController:viewController2];
+    
+    nc.navigationBar.barTintColor = [UIColor yellowColor];
+    nc.navigationBar.translucent = NO;
+    
+[self.navigationController presentViewController:nc animated:YES completion:^{
+      
+  }];
+////    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+   
 }
+-(UIStatusBarStyle) preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -156,9 +170,9 @@
 //}
 
 
--(BOOL) prefersStatusBarHidden
-{
-    return YES;
-}
+//-(BOOL) prefersStatusBarHidden
+//{
+//    return YES;
+//}
 
 @end
