@@ -42,6 +42,7 @@
         
         usernameTitle = [[UILabel alloc]initWithFrame:CGRectMake(80, 180, 100, 20)];
         usernameTitle.backgroundColor = [UIColor lightGrayColor];
+        userName.autocapitalizationType = NO;
         usernameTitle.text = @"Username :";
         [self.view addSubview:usernameTitle];
         
