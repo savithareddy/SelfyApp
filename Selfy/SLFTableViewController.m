@@ -9,6 +9,7 @@
 #import "SLFTableViewController.h"
 #import "SLFTableViewCell.h"
 #import "SLFCameraViewController.h"
+#import "SLFNewNavigationController.h"
 #import <Parse/Parse.h>
 
 @interface SLFTableViewController ()
@@ -21,7 +22,7 @@
     UILabel *nameLabel;
     UIButton *settingButton;
     UIButton *addButton;
-    NSArray *selfies;
+    NSArray *selfies; // changing mutable to array since while parsing we r nor adding to the array but resettting only
     
 }
 
@@ -39,23 +40,24 @@
 //                        @"selfy_id" : @""
 //                        }
 //                   ]mutableCopy];
-        selfies = [@[
-                     @{
-                                              
-                     @"image" : @"http://1.bp.blogspot.com/-S4MUYSjsw4E/Tb9wsgCVegI/AAAAAAAAAjg/fOhEnXh4_0U/s1600/IMG_3535.JPG",
-                     @"caption" : @"Awesome!",
-                     @"user_id" : @"savitha",
-                    @"avatar" : @"https://pbs.twimg.com/profile_images/454415266986725376/PPLXLSSx.png",
-                    @"selfy_id" : @"hjk2l32bn1"
-                                                                                              
-                        }
-                                                               
-                ] mutableCopy];
+//        selfies = @[
+//                     @{
+//                                              
+//                     @"image" : @"http://1.bp.blogspot.com/-S4MUYSjsw4E/Tb9wsgCVegI/AAAAAAAAAjg/fOhEnXh4_0U/s1600/IMG_3535.JPG",
+//                     @"caption" : @"Awesome!",
+//                     @"user_id" : @"savitha",
+//                    @"avatar" : @"https://pbs.twimg.com/profile_images/454415266986725376/PPLXLSSx.png",
+//                    @"selfy_id" : @"hjk2l32bn1"
+//                                                                                              
+//                        }
+//                                                               
+//                ] ;
+        //[self refreshSelfies];
         
-        PFObject *testObject = [PFObject objectWithClassName:@"user"];
-        testObject[@"name"] = @"savitha";
-        [testObject saveInBackground];
-//        
+//        PFObject *testObject = [PFObject objectWithClassName:@"user"];
+//        testObject[@"name"] = @"savitha";
+//        [testObject saveInBackground];
+//
 //        PFUser *user = [PFUser currentUser];
 //        user.username = @"savitha";
 //        user.password = @"pass"; //any value for password
@@ -65,7 +67,8 @@
         self.navigationItem.rightBarButtonItem = addNewSelfyButton;
        
          
-    self.tableView.rowHeight = self.tableView.frame.size.width-40;
+ self.tableView.rowHeight = self.tableView.frame.size.width-40;
+        
         
     }
     return self;
@@ -104,6 +107,12 @@
     
 }
 
+-(void) viewWillAppear:(BOOL)animated
+{
+    [self refreshSelfies]; //this whole method is used to reload the data to the table biew
+    
+}
+
 -(void) pressSubmit
 {
     
@@ -112,8 +121,14 @@
 {
     SLFCameraViewController *viewController2 = [[SLFCameraViewController alloc]initWithNibName:nil bundle:nil];
     //UINavigationController *navController2 = [[UINavigationController alloc]initWithRootViewController:viewController2];
-    [self.navigationController pushViewController:viewController2 animated:YES];
+    SLFNewNavigationController *nc = [[SLFNewNavigationController alloc]initWithRootViewController:viewController2];
+    nc.navigationBar.barTintColor = [UIColor blueColor];
+    nc.navigationBar.translucent = NO;
+    //[self.navigationController pushViewController:viewController2 animated:YES];
 //    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    [self.navigationController  presentViewController:nc animated:YES completion:^{
+        
+    }];
 
 }
 - (void)didReceiveMemoryWarning
@@ -126,8 +141,38 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [selfies count];
+//    PFQuery *query =[PFQuery queryWithClassName:@"UserSelfy"]; // should be placed here to know how many times to query
+//    selfies= [query findObjects]; //blocks the main thread therefore use in background
+   // NSLog(@"%@",selfies);
+        return [selfies count];
 }
+
+-(void) refreshSelfies
+{
+    PFQuery *query =[PFQuery queryWithClassName:@"UserSelfy"];
+  // selfies= [query findObjects]; // this does task only sync...//blocks the main thread therefore use in background
+    //[query findObjectsInBackgroundWithTarget:self selector:@selector(callbackWithResult:error:)];
+    
+    //Change Order by created date : newest first
+    [query orderByDescending:@"createdAt"];
+    
+    //after user connected to selfy :
+    //used a pointer "PArent " to do this
+    
+    //filter only your user's selfies
+    [query whereKey:@"parent" equalTo:[PFUser currentUser]];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        selfies = objects;
+        [self.tableView reloadData];
+    }];
+    
+}
+
+//-(void) callbackWithResult:(NSArray *)result error:(NSError *)error
+//{
+//    // not reuired here // can work with the block method above
+//}
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -156,9 +201,9 @@
 //}
 
 
--(BOOL) prefersStatusBarHidden
-{
-    return YES;
-}
+//-(BOOL) prefersStatusBarHidden
+//{
+//    return YES;
+//}
 
 @end

@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 @interface SLFTableViewCell : UITableViewCell
 
 
-@property (nonatomic) NSDictionary *selfyInfo;
+//@property (nonatomic) NSDictionary *selfyInfo;
 
-
+@property (nonatomic) PFObject *selfyInfo;
 
 @end

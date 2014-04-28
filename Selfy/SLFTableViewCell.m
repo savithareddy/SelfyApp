@@ -7,6 +7,8 @@
 //
 
 #import "SLFTableViewCell.h"
+#import <parse/Parse.h>
+
 
 @implementation SLFTableViewCell
 {
@@ -41,22 +43,44 @@
     return self;
 }
 
--(void) setSelfyInfo:(NSDictionary *)selfyInfo
+-(void) setSelfyInfo:(PFObject *)selfyInfo //chnaged from NSDictionary to PFObject// does not ike literals
 {
     _selfyInfo = selfyInfo;
     
-    selfyCaption.text = selfyInfo[@"caption"];
+    //selfyCaption.text = selfyInfo[@"caption"];
     //selfyUserID.text = selfyInfo[@"user_ID"];
     
-    NSURL *imageURL = [NSURL URLWithString:selfyInfo[@"image"]];
-    NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
-    UIImage *image = [UIImage imageWithData:imageData];
-    selfyView.image = image;
+   
     
-    NSURL *avatarURL = [NSURL URLWithString:selfyInfo[@"avatar"]];
-    NSData *avatarData = [NSData dataWithContentsOfURL:avatarURL];
-    UIImage *avatar = [UIImage imageWithData:avatarData];
-    avatarView.image = avatar;
+   
+//    NSURL *imageURL = [NSURL URLWithString:selfyInfo[@"image"]];
+//    NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+//    UIImage *image = [UIImage imageWithData:imageData];
+    
+   
+   //NSData *imageData= [imageFile getData];
+//    UIImage *image = [UIImage imageWithData:imageData];
+    
+     selfyCaption.text = [selfyInfo objectForKey:@"caption"];
+    
+     PFFile *imageFile = [selfyInfo objectForKey:@"imageFile"];
+    [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) { // to remove the error shown below
+//       NSData *imageData= [imageFile getData];
+        UIImage *image = [UIImage imageWithData:data];
+        selfyView.image = image;
+    }progressBlock:^(int percentDone) {
+        //do something
+    }];
+    
+  // selfyView.image = image;
+    
+//    NSURL *avatarURL = [NSURL URLWithString:selfyInfo[@"avatar"]];
+//    NSData *avatarData = [NSData dataWithContentsOfURL:avatarURL];
+//    UIImage *avatar = [UIImage imageWithData:avatarData];
+//    avatarView.image = avatar;
+    
+    UIImage *avatarImage = [UIImage imageNamed:@"Avatar.png"];
+    avatarView.image = avatarImage;
 }
 
 
