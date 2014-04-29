@@ -65,15 +65,18 @@
 
         UIBarButtonItem *addNewSelfyButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(openNewSelfy)];
         self.navigationItem.rightBarButtonItem = addNewSelfyButton;
-       
-         
- self.tableView.rowHeight = self.tableView.frame.size.width-40;
         
-        
+        UIBarButtonItem *settingSelfyButton = [[UIBarButtonItem alloc]initWithTitle:@"\u2699" style:UIBarButtonItemStylePlain target:self action:@selector(pressSetting)];
+        self.navigationItem.leftBarButtonItem = settingSelfyButton;
+       self.tableView.rowHeight = self.tableView.frame.size.width-40;
     }
     return self;
 }
 
+-(void) pressSetting
+{
+    
+}
 
 - (void)viewDidLoad
 {
