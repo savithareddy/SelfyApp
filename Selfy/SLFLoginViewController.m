@@ -28,17 +28,11 @@
     UIView *signForm;
     UIView *signinForm;
     UITextField *displayName;
-    UILabel *displayNameTitle;
     UITextField *signinuserName;
-    UILabel *signinuserNameTitle;
     UITextField *signinPassword;
-    UILabel *signinPasswordTitle;
     UITextField *signinReenterPassword;
-    UILabel *signinReenterPasswordTitle;
     UITextField *signinEmail;
-    UILabel *signinEmailTitle;
     UIImageView *signinAvatar;
-    UILabel *signinAvatarTitle;
     UIButton *submitButtonSignin;
 }
 
@@ -110,11 +104,6 @@
         displayName.backgroundColor = [UIColor whiteColor];
         [signinForm addSubview:displayName];
         
-//        displayNameTitle = [[UILabel alloc]initWithFrame:CGRectMake(60, 80, 220, 20)];
-//        [displayNameTitle setText:@"Display Name: "];
-//        displayNameTitle.textColor = [UIColor grayColor];
-//        displayNameTitle.backgroundColor = [UIColor clearColor];
-//        [signinForm addSubview:displayNameTitle];
         
         signinuserName = [[UITextField alloc]initWithFrame:CGRectMake(60, 140, 220, 30)];
         signinuserName.backgroundColor = [UIColor whiteColor];
@@ -122,11 +111,6 @@
         signinuserName.textColor = [UIColor lightGrayColor];
         [signinForm addSubview:signinuserName];
         
-//        signinuserNameTitle = [[UILabel alloc]initWithFrame:CGRectMake(60, 120, 220, 20)];
-//        [signinuserNameTitle setText:@"User Name : "];
-//        signinuserNameTitle.textColor = [UIColor lightGrayColor];
-//        signinuserNameTitle.backgroundColor = [UIColor clearColor];
-//        [signinForm addSubview:signinuserNameTitle];
         
         signinPassword = [[UITextField alloc]initWithFrame:CGRectMake(60, 180, 220, 30)];
         signinPassword.backgroundColor = [UIColor whiteColor];
@@ -135,24 +119,14 @@
         signinPassword.textColor = [UIColor lightGrayColor];
         [signinForm addSubview:signinPassword];
         
-//        signinPasswordTitle = [[UILabel alloc]initWithFrame:CGRectMake(60, 180, 220, 30)];
-//        [signinPasswordTitle setText:@"Password: "];
-//        signinPasswordTitle.textColor = [UIColor lightGrayColor];
-//        signinPasswordTitle.backgroundColor = [UIColor clearColor];
-//        [signinForm addSubview:signinPasswordTitle];
         
         signinReenterPassword = [[UITextField alloc]initWithFrame:CGRectMake(60, 220, 220, 30)];
         signinReenterPassword.backgroundColor = [UIColor whiteColor];
-        signinReenterPassword.secureTextEntry = YES;
+        //signinReenterPassword.secureTextEntry = YES;
         signinReenterPassword.placeholder = @"Re-enter Password: ";
         signinReenterPassword.textColor = [UIColor lightGrayColor];
         [signinForm addSubview:signinReenterPassword];
         
-//        signinReenterPasswordTitle = [[UILabel alloc]initWithFrame:CGRectMake(60, 220, 220, 30)];
-//        [signinReenterPasswordTitle setText:@"Re-enter Password"];
-//        signinReenterPasswordTitle.textColor = [UIColor lightGrayColor];
-//        signinReenterPasswordTitle.backgroundColor = [UIColor clearColor];
-//        [signinForm addSubview:signinReenterPasswordTitle];
         
         signinEmail = [[UITextField alloc]initWithFrame:CGRectMake(60, 260, 220, 30)];
         signinEmail.backgroundColor = [UIColor whiteColor];
@@ -160,21 +134,11 @@
         signinEmail.textColor = [UIColor lightGrayColor];
         [signinForm addSubview:signinEmail];
         
-//        signinEmailTitle = [[UILabel alloc]initWithFrame:CGRectMake(60, 260, 220, 30)];
-//        [signinEmailTitle setText:@"E-mail "];
-//        signinEmailTitle.textColor = [UIColor lightGrayColor];
-//        signinEmailTitle.backgroundColor = [UIColor clearColor];
-//        [signinForm addSubview:signinEmailTitle];
         
         signinAvatar = [[UIImageView alloc]initWithFrame:CGRectMake(60, 300, 220, 30)];
         signinAvatar.backgroundColor = [UIColor whiteColor];
         [signinForm addSubview:signinAvatar];
         
-//        signinAvatarTitle = [[UILabel alloc]initWithFrame:CGRectMake(60, 300, 220, 30)];
-//        [signinAvatarTitle setText:@"Choose Your Avatar"];
-//        signinAvatarTitle.textColor = [UIColor lightGrayColor];
-//        signinAvatarTitle.backgroundColor = [UIColor clearColor];
-//        [signinForm addSubview:signinAvatarTitle];
         
         submitButtonSignin = [[UIButton alloc] initWithFrame:CGRectMake(90, 340, 150, 30)];
         submitButtonSignin.backgroundColor = [UIColor blueColor];
@@ -208,11 +172,6 @@
     }];
 
 }
-
-
-
-
-
 
 -(void) pressSubmit
 {
@@ -279,20 +238,5 @@
    
 }
 
-//-(BOOL) prefersStatusBarHidden
-//{
-//    return YES;
-//}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
