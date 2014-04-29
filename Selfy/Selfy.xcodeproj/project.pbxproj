@@ -39,6 +39,7 @@
 		91284F4C1906D4DE00D5C8B5 /* SLFLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91284F4B1906D4DE00D5C8B5 /* SLFLoginViewController.m */; };
 		91284F4F1906D50900D5C8B5 /* SLFCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91284F4E1906D50900D5C8B5 /* SLFCameraViewController.m */; };
 		91284F511906E96400D5C8B5 /* camera.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 91284F501906E96400D5C8B5 /* camera.jpeg */; };
+		912AC092190FDD2F00E1AC6A /* SLFSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 912AC091190FDD2F00E1AC6A /* SLFSignUpViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,8 @@
 		91284F4D1906D50900D5C8B5 /* SLFCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFCameraViewController.h; sourceTree = "<group>"; };
 		91284F4E1906D50900D5C8B5 /* SLFCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFCameraViewController.m; sourceTree = "<group>"; };
 		91284F501906E96400D5C8B5 /* camera.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = camera.jpeg; sourceTree = "<group>"; };
+		912AC090190FDD2F00E1AC6A /* SLFSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFSignUpViewController.h; sourceTree = "<group>"; };
+		912AC091190FDD2F00E1AC6A /* SLFSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFSignUpViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +135,8 @@
 		9116CC2E1905898200211F8C = {
 			isa = PBXGroup;
 			children = (
+				912AC090190FDD2F00E1AC6A /* SLFSignUpViewController.h */,
+				912AC091190FDD2F00E1AC6A /* SLFSignUpViewController.m */,
 				9116CC7319059FEF00211F8C /* Images */,
 				9116CC69190589CB00211F8C /* SLFTableViewController.h */,
 				9116CC6A190589CB00211F8C /* SLFTableViewController.m */,
@@ -339,6 +344,7 @@
 				9116CC471905898200211F8C /* main.m in Sources */,
 				9116CC6B190589CB00211F8C /* SLFTableViewController.m in Sources */,
 				91284F4C1906D4DE00D5C8B5 /* SLFLoginViewController.m in Sources */,
+				912AC092190FDD2F00E1AC6A /* SLFSignUpViewController.m in Sources */,
 				91284F4F1906D50900D5C8B5 /* SLFCameraViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

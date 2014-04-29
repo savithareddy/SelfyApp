@@ -18,10 +18,10 @@
 
 @implementation SLFTableViewController
 {
-    UIView *header;
-    UILabel *nameLabel;
-    UIButton *settingButton;
-    UIButton *addButton;
+//    UIView *header;
+//    UILabel *nameLabel;
+//    UIButton *settingButton;
+//    UIButton *addButton;
     NSArray *selfies; // changing mutable to array since while parsing we r nor adding to the array but resettting only
     
 }
@@ -65,6 +65,8 @@
 
         UIBarButtonItem *addNewSelfyButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(openNewSelfy)];
         self.navigationItem.rightBarButtonItem = addNewSelfyButton;
+        UIBarButtonItem *settingSelfyButton = [[UIBarButtonItem alloc]initWithTitle:@"\u2699" style:UIBarButtonItemStylePlain target:self action:@selector(pressSetting)];
+        self.navigationItem.leftBarButtonItem = settingSelfyButton;
        
          
  self.tableView.rowHeight = self.tableView.frame.size.width-40;
@@ -119,16 +121,17 @@
 }
 -(void)openNewSelfy
 {
-    SLFCameraViewController *viewController2 = [[SLFCameraViewController alloc]initWithNibName:nil bundle:nil];
-    //UINavigationController *navController2 = [[UINavigationController alloc]initWithRootViewController:viewController2];
-    SLFNewNavigationController *nc = [[SLFNewNavigationController alloc]initWithRootViewController:viewController2];
-    nc.navigationBar.barTintColor = [UIColor blueColor];
-    nc.navigationBar.translucent = NO;
-    //[self.navigationController pushViewController:viewController2 animated:YES];
-//    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    [self.navigationController  presentViewController:nc animated:YES completion:^{
-        
-    }];
+//    SLFCameraViewController *viewController2 = [[SLFCameraViewController alloc]initWithNibName:nil bundle:nil];
+//    //UINavigationController *navController2 = [[UINavigationController alloc]initWithRootViewController:viewController2];
+//    SLFNewNavigationController *nc = [[SLFNewNavigationController alloc]initWithRootViewController:viewController2];
+//    nc.navigationBar.barTintColor = [UIColor blueColor];
+//    nc.navigationBar.translucent = NO;
+//    //[self.navigationController pushViewController:viewController2 animated:YES];
+////    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+//    [self.navigationController  presentViewController:nc animated:YES completion:^{
+//        
+//    }];
+    
 
 }
 - (void)didReceiveMemoryWarning
@@ -193,17 +196,5 @@
     
 }
 
-//-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    
-//    
-//
-//}
-
-
-//-(BOOL) prefersStatusBarHidden
-//{
-//    return YES;
-//}
 
 @end
