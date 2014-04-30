@@ -39,6 +39,9 @@
 		91284F4C1906D4DE00D5C8B5 /* SLFLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91284F4B1906D4DE00D5C8B5 /* SLFLoginViewController.m */; };
 		91284F4F1906D50900D5C8B5 /* SLFCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91284F4E1906D50900D5C8B5 /* SLFCameraViewController.m */; };
 		91284F511906E96400D5C8B5 /* camera.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 91284F501906E96400D5C8B5 /* camera.jpeg */; };
+		91A0670619112E1600F0A540 /* SLFSettingsButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A0670519112E1600F0A540 /* SLFSettingsButton.m */; };
+		91A0670919112E5800F0A540 /* SLFSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A0670819112E5800F0A540 /* SLFSettingsViewController.m */; };
+		91A0670C19114B4500F0A540 /* SLFSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A0670B19114B4500F0A540 /* SLFSignUpViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +96,12 @@
 		91284F4D1906D50900D5C8B5 /* SLFCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFCameraViewController.h; sourceTree = "<group>"; };
 		91284F4E1906D50900D5C8B5 /* SLFCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFCameraViewController.m; sourceTree = "<group>"; };
 		91284F501906E96400D5C8B5 /* camera.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = camera.jpeg; sourceTree = "<group>"; };
+		91A0670419112E1600F0A540 /* SLFSettingsButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFSettingsButton.h; sourceTree = "<group>"; };
+		91A0670519112E1600F0A540 /* SLFSettingsButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFSettingsButton.m; sourceTree = "<group>"; };
+		91A0670719112E5800F0A540 /* SLFSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFSettingsViewController.h; sourceTree = "<group>"; };
+		91A0670819112E5800F0A540 /* SLFSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFSettingsViewController.m; sourceTree = "<group>"; };
+		91A0670A19114B4500F0A540 /* SLFSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFSignUpViewController.h; sourceTree = "<group>"; };
+		91A0670B19114B4500F0A540 /* SLFSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFSignUpViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +141,12 @@
 		9116CC2E1905898200211F8C = {
 			isa = PBXGroup;
 			children = (
+				91A0670419112E1600F0A540 /* SLFSettingsButton.h */,
+				91A0670519112E1600F0A540 /* SLFSettingsButton.m */,
+				91A0670719112E5800F0A540 /* SLFSettingsViewController.h */,
+				91A0670819112E5800F0A540 /* SLFSettingsViewController.m */,
+				91A0670A19114B4500F0A540 /* SLFSignUpViewController.h */,
+				91A0670B19114B4500F0A540 /* SLFSignUpViewController.m */,
 				9116CC7319059FEF00211F8C /* Images */,
 				9116CC69190589CB00211F8C /* SLFTableViewController.h */,
 				9116CC6A190589CB00211F8C /* SLFTableViewController.m */,
@@ -333,11 +348,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91A0670619112E1600F0A540 /* SLFSettingsButton.m in Sources */,
 				9116CC4B1905898200211F8C /* SLFAppDelegate.m in Sources */,
 				911D6363190ECABD008323DE /* SLFNewNavigationController.m in Sources */,
 				9116CC6E19058A2100211F8C /* SLFTableViewCell.m in Sources */,
 				9116CC471905898200211F8C /* main.m in Sources */,
 				9116CC6B190589CB00211F8C /* SLFTableViewController.m in Sources */,
+				91A0670C19114B4500F0A540 /* SLFSignUpViewController.m in Sources */,
+				91A0670919112E5800F0A540 /* SLFSettingsViewController.m in Sources */,
 				91284F4C1906D4DE00D5C8B5 /* SLFLoginViewController.m in Sources */,
 				91284F4F1906D50900D5C8B5 /* SLFCameraViewController.m in Sources */,
 			);

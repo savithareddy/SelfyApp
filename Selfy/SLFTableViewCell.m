@@ -78,10 +78,17 @@
 //    NSData *avatarData = [NSData dataWithContentsOfURL:avatarURL];
 //    UIImage *avatar = [UIImage imageWithData:avatarData];
 //    avatarView.image = avatar;
-    
-    UIImage *avatarImage = [UIImage imageNamed:@"Avatar.png"];
-    avatarView.image = avatarImage;
-}
+    PFUser *user = [selfyInfo objectForKey:@"parent"];
+    [user fetchIfNeededInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        NSLog(@"%@", object);
+        PFFile *avatarFile = [selfyInfo objectForKey:@"avatar"];
+        [avatarFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+            avatarView.image  = [UIImage imageWithData:data];
+        }];
+    }];
+//    UIImage *avatarImage = [UIImage imageNamed:@"Avatar.png"];
+//    avatarView.image = avatarImage;
+    }
 
 
 - (void)awakeFromNib

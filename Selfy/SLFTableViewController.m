@@ -11,6 +11,8 @@
 #import "SLFCameraViewController.h"
 #import "SLFNewNavigationController.h"
 #import <Parse/Parse.h>
+#import "SLFSettingsButton.h"
+#import "SLFSettingsViewController.h"
 
 @interface SLFTableViewController ()
 
@@ -18,11 +20,13 @@
 
 @implementation SLFTableViewController
 {
-    UIView *header;
-    UILabel *nameLabel;
-    UIButton *settingButton;
-    UIButton *addButton;
+//    UIView *header;
+//    UILabel *nameLabel;
+//    UIButton *settingButton;
+//    UIButton *addButton;
     NSArray *selfies; // changing mutable to array since while parsing we r nor adding to the array but resettting only
+    SLFSettingsButton *settingsButtonView;
+    SLFSettingsViewController * settingsVC;
     
 }
 
@@ -65,6 +69,15 @@
 
         UIBarButtonItem *addNewSelfyButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(openNewSelfy)];
         self.navigationItem.rightBarButtonItem = addNewSelfyButton;
+        
+        settingsButtonView = [[SLFSettingsButton alloc] initWithFrame:CGRectMake(0, 0, 20, 20)]; //the button size is standard 20*20 is in apple document for UIBarButtonItem Class Ref.
+        settingsButtonView.tintColor  = [UIColor blueColor];
+        settingsButtonView.toggleTintColor = [UIColor redColor];
+        [settingsButtonView addTarget:self action:@selector(openSettings) forControlEvents:UIControlEventTouchUpInside];
+        
+        
+        UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc]initWithCustomView:settingsButtonView];
+        self.navigationItem.leftBarButtonItem = settingsButton;
        
          
  self.tableView.rowHeight = self.tableView.frame.size.width-40;
@@ -72,6 +85,31 @@
         
     }
     return self;
+}
+-(void)openSettings
+{
+    [settingsButtonView toggle]; // calling the method declared in SLFSettingsButton.h
+    
+   // settingsButtonView.toggled = ![settingsButtonView isToggled]; //is declared in the toggle method in .h file instead do the above
+    
+    int X = [settingsButtonView isToggled] ? SCREEN_WIDTH-52 : 0; //if toggled move to width of 270 else 0
+//    int X=0; // other way to represent the above
+//    if ([settingsButtonView isToggled]) {
+//        X=SCREEN_WIDTH-50;
+//    }
+    [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        self.navigationController.view.frame = CGRectMake(X, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+    } completion:^(BOOL finished) {
+        if (![settingsButtonView isToggled]) {
+            [settingsVC.view removeFromSuperview];
+        }
+    }];
+
+    if ([settingsButtonView isToggled]) {
+        if(settingsVC==nil) settingsVC = [[SLFSettingsViewController alloc]initWithNibName:nil bundle:nil];
+        settingsVC.view.frame = CGRectMake(52-SCREEN_WIDTH, 0, SCREEN_WIDTH-52, SCREEN_HEIGHT);
+        [self.navigationController.view addSubview:settingsVC.view];
+    }
 }
 
 

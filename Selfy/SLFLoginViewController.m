@@ -5,10 +5,11 @@
 //  Created by Savitha Reddy on 4/22/14.
 //  Copyright (c) 2014 Savitha. All rights reserved.
 //
-
 #import "SLFLoginViewController.h"
 #import "SLFTableViewController.h"
 #import <Parse/Parse.h>
+#import "SLFSignUpViewController.h"
+#import "SLFNewNavigationController.h"
 
 @interface SLFLoginViewController ()
 
@@ -24,12 +25,14 @@
     UITextField *password;
     UIButton *submitButton;
     
+    
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        
         loginImage = [[UIImageView alloc] initWithFrame:CGRectMake(120, 130, 30, 30)];
         loginImage.image = [UIImage imageNamed:@"Avatar.png"];
         [self.view addSubview:loginImage];
@@ -61,24 +64,46 @@
         [self.view addSubview:password];
         
         submitButton = [[UIButton alloc] initWithFrame:CGRectMake(130, 330, 70, 30)];
-        submitButton.backgroundColor = [UIColor blackColor];
-        [submitButton setTitle:@"SUBMIT" forState:UIControlStateNormal];
+        submitButton.backgroundColor = [UIColor blueColor];
+        [submitButton setTitle:@"SignIN" forState:UIControlStateNormal];
         [submitButton addTarget:self action:@selector(pressSubmit) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:submitButton];
-
+        
+        UIButton *submitButtonSignin = [[UIButton alloc] initWithFrame:CGRectMake(130, 380, 70, 30)];
+        submitButtonSignin.backgroundColor = [UIColor blueColor];
+        submitButtonSignin.layer.cornerRadius = 15;
+        [submitButtonSignin setTitle:@"SignUP" forState:UIControlStateNormal];
+        [submitButtonSignin addTarget:self action:@selector(showSignUp) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:submitButtonSignin];
+        
     }
     return self;
 }
 
+-(void) showSignUp
+{
+    SLFSignUpViewController *signUpVC = [[SLFSignUpViewController alloc]initWithNibName:nil bundle:nil];
+    //UINavigationController *navController2 = [[UINavigationController alloc]initWithRootViewController:viewController2];
+    SLFNewNavigationController *nc = [[SLFNewNavigationController alloc]initWithRootViewController:signUpVC];
+    nc.navigationBar.barTintColor = [UIColor blueColor];
+    nc.navigationBar.translucent = NO;
+    //[self.navigationController pushViewController:viewController2 animated:YES];
+    //    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    [self.navigationController  presentViewController:nc animated:YES completion:^{
+        [self hideKeyboard];
+    }];
+    
+    
+}
 -(void) pressSubmit
 {
     
-//    SLFTableViewController *viewController1 = [[SLFTableViewController alloc] initWithStyle:UITableViewStylePlain];
-//    [self.navigationController pushViewController:viewController1 animated:YES];
-//       userName.text = @"";
-//    password.text = @"";
-//    [userName resignFirstResponder];
-//    [password resignFirstResponder];
+    //    SLFTableViewController *viewController1 = [[SLFTableViewController alloc] initWithStyle:UITableViewStylePlain];
+    //    [self.navigationController pushViewController:viewController1 animated:YES];
+    //       userName.text = @"";
+    //    password.text = @"";
+    //    [userName resignFirstResponder];
+    //    [password resignFirstResponder];
     
     UIView *alertCircle = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width+50, self.view.frame.size.height-40)];
     alertCircle.backgroundColor = [UIColor grayColor];
@@ -91,35 +116,67 @@
     [ loginCircle startAnimating];
     [alertCircle addSubview:loginCircle];
     
-    PFUser *user = [PFUser currentUser];
-    user.username = userName.text;
-    user.password = password.text; //any value for password
+    //    PFUser *user = [PFUser currentUser];
+    //    user.username = userName.text;
+    //    user.password = password.text; //any value for password
+    //
+    //    userName.text = nil;
+    //    password.text= nil;
+    //    [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+    //        if(error == nil)
+    //        {
+    //            self.navigationController.navigationBarHidden = NO;
+    //            [alertCircle removeFromSuperview];
+    //            self.navigationController.viewControllers = @[[[SLFTableViewController alloc] initWithStyle:UITableViewStylePlain
+    //                                                           ]];
+    //        }else{
+    //            //error.userInfo[@"error"];
+    //            [alertCircle removeFromSuperview];
+    //            NSString *errorInfo = error.userInfo[@"error"];
+    //            // NSLog(@"%@", error.userInfo);
+    //            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ERROR" message: errorInfo
+    //                                                           delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    //
+    //            [alert show];
+    //            //[self.view addSubview:alert];
+    //        }
+    //
+    //
+    //        }];
     
-    userName.text = nil;
-    password.text= nil;
-    [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if(error == nil)
-        {
-            self.navigationController.navigationBarHidden = NO;
-            [alertCircle removeFromSuperview];
-            self.navigationController.viewControllers = @[[[SLFTableViewController alloc] initWithStyle:UITableViewStylePlain
-                                                           ]];
-        }else{
-            //error.userInfo[@"error"];
-            [alertCircle removeFromSuperview];
-            NSString *errorInfo = error.userInfo[@"error"];
-            // NSLog(@"%@", error.userInfo);
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ERROR" message: errorInfo
-                                                           delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            
-            [alert show];
-            //[self.view addSubview:alert];
-        }
-
-    
-        }];
+    [PFUser logInWithUsernameInBackground:userName.text password:password.text block:^(PFUser *user, NSError *error)
+     {
+         NSLog(@"logged in %@", user.username);
+         NSLog(@"current user %@", [PFUser currentUser].username);
+         if(error == nil)
+         {
+             self.navigationController.navigationBarHidden = NO;
+             self.navigationController.viewControllers = @[[[SLFTableViewController alloc] initWithStyle:UITableViewStylePlain]];
+         }else{
+             password.text = nil;
+             [alertCircle removeFromSuperview];
+             NSString *errorInfo = error.userInfo[@"error"];
+             NSLog(@"%@", error.userInfo);
+             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Username Taken" message: errorInfo
+                                                            delegate:self cancelButtonTitle:@"Try Another Username" otherButtonTitles:nil];
+             
+             [alert show];
+             //[self.view addSubview:alert];
+             
+         }
+     }];
     
 }
+
+-(void) hideKeyboard
+{
+    [userName resignFirstResponder];
+    [password resignFirstResponder];
+    [UIView animateWithDuration:0.3 animations:^{
+        self.view.frame = CGRectMake(20, 200, 280, 240);
+    }];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -129,23 +186,11 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-   
+    
 }
-
-//-(BOOL) prefersStatusBarHidden
-//{
-//    return YES;
-//}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end
+
+
+
+
+
