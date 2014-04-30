@@ -11,6 +11,9 @@
 #import "SLFCameraViewController.h"
 #import "SLFNewNavigationController.h"
 #import <Parse/Parse.h>
+#import "SLFButton.h"
+#import "SLFButton1.h"
+#import "SLFSettingViewController.h"
 
 @interface SLFTableViewController ()
 
@@ -18,11 +21,15 @@
 
 @implementation SLFTableViewController
 {
+    SLFButton *toggleView;
 //    UIView *header;
 //    UILabel *nameLabel;
 //    UIButton *settingButton;
 //    UIButton *addButton;
     NSArray *selfies; // changing mutable to array since while parsing we r nor adding to the array but resettting only
+    UIButton *settingButton;
+    UIButton *cancelButton;
+    
     
 }
 
@@ -65,8 +72,15 @@
 
         UIBarButtonItem *addNewSelfyButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(openNewSelfy)];
         self.navigationItem.rightBarButtonItem = addNewSelfyButton;
-        UIBarButtonItem *settingSelfyButton = [[UIBarButtonItem alloc]initWithTitle:@"\u2699" style:UIBarButtonItemStylePlain target:self action:@selector(pressSetting)];
+        
+        settingButton = [[SLFButton alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+       [settingButton addTarget:self action:@selector(toggleSettings) forControlEvents:UIControlEventTouchUpInside];
+        
+        
+        UIBarButtonItem *settingSelfyButton = [[UIBarButtonItem alloc]initWithCustomView:settingButton];
         self.navigationItem.leftBarButtonItem = settingSelfyButton;
+        
+        
        
          
  self.tableView.rowHeight = self.tableView.frame.size.width-40;
@@ -81,6 +95,8 @@
 {
     [super viewDidLoad];
 
+    [self toggleSettings];
+  //  [self.view addSubview:toggleView];
     
 //    header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
 //    header.backgroundColor = [UIColor lightGrayColor];
@@ -108,6 +124,30 @@
 //    [self.view addSubview:addButton];
     
 }
+
+
+
+
+-(void) toggleSettings
+{
+//    if (<#condition#>) {
+//        <#statements#>
+//    }
+    [UIView animateWithDuration:0.75 animations:^{
+        self.navigationController.view.frame  = CGRectMake(SCREEN_WIDTH-50, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+        self.navigationItem.
+        self.navigationItem.rightBarButtonItem = cancelButton;
+        UIViewController *snc = [[SLFSettingViewController alloc] initWithNibName:nil bundle:nil];
+        snc.view.frame = CGRectMake(-270, 0, 270, SCREEN_HEIGHT);
+        
+        //settingButton = [[SLFButton1 alloc] initWithFrame:self.view.frame];
+    }];
+    
+       // UINavigationController *toggleControl = [[UINavigationController alloc] initWithRootViewController:snc];
+        //[self.navigationController.view addSubview:snc.view];
+       // toggleView = [[SLFButton1 alloc] initWithFrame:self.view.frame];
+}
+
 
 -(void) viewWillAppear:(BOOL)animated
 {

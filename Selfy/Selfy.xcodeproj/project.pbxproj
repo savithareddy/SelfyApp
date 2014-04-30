@@ -40,6 +40,10 @@
 		91284F4F1906D50900D5C8B5 /* SLFCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91284F4E1906D50900D5C8B5 /* SLFCameraViewController.m */; };
 		91284F511906E96400D5C8B5 /* camera.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 91284F501906E96400D5C8B5 /* camera.jpeg */; };
 		912AC092190FDD2F00E1AC6A /* SLFSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 912AC091190FDD2F00E1AC6A /* SLFSignUpViewController.m */; };
+		912AC09519101BE400E1AC6A /* SLFSettingIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 912AC09419101BE400E1AC6A /* SLFSettingIcon.m */; };
+		912AC09819101C1F00E1AC6A /* SLFSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 912AC09719101C1F00E1AC6A /* SLFSettingViewController.m */; };
+		912AC09B1910218300E1AC6A /* SLFButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 912AC09A1910218300E1AC6A /* SLFButton.m */; };
+		912AC09E1910344E00E1AC6A /* SLFButton1.m in Sources */ = {isa = PBXBuildFile; fileRef = 912AC09D1910344E00E1AC6A /* SLFButton1.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +100,14 @@
 		91284F501906E96400D5C8B5 /* camera.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = camera.jpeg; sourceTree = "<group>"; };
 		912AC090190FDD2F00E1AC6A /* SLFSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFSignUpViewController.h; sourceTree = "<group>"; };
 		912AC091190FDD2F00E1AC6A /* SLFSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFSignUpViewController.m; sourceTree = "<group>"; };
+		912AC09319101BE400E1AC6A /* SLFSettingIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFSettingIcon.h; sourceTree = "<group>"; };
+		912AC09419101BE400E1AC6A /* SLFSettingIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFSettingIcon.m; sourceTree = "<group>"; };
+		912AC09619101C1F00E1AC6A /* SLFSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFSettingViewController.h; sourceTree = "<group>"; };
+		912AC09719101C1F00E1AC6A /* SLFSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFSettingViewController.m; sourceTree = "<group>"; };
+		912AC0991910218300E1AC6A /* SLFButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFButton.h; sourceTree = "<group>"; };
+		912AC09A1910218300E1AC6A /* SLFButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFButton.m; sourceTree = "<group>"; };
+		912AC09C1910344E00E1AC6A /* SLFButton1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFButton1.h; sourceTree = "<group>"; };
+		912AC09D1910344E00E1AC6A /* SLFButton1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFButton1.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,8 +147,16 @@
 		9116CC2E1905898200211F8C = {
 			isa = PBXGroup;
 			children = (
+				912AC09619101C1F00E1AC6A /* SLFSettingViewController.h */,
+				912AC09719101C1F00E1AC6A /* SLFSettingViewController.m */,
+				912AC09319101BE400E1AC6A /* SLFSettingIcon.h */,
+				912AC09419101BE400E1AC6A /* SLFSettingIcon.m */,
 				912AC090190FDD2F00E1AC6A /* SLFSignUpViewController.h */,
 				912AC091190FDD2F00E1AC6A /* SLFSignUpViewController.m */,
+				912AC09C1910344E00E1AC6A /* SLFButton1.h */,
+				912AC09D1910344E00E1AC6A /* SLFButton1.m */,
+				912AC0991910218300E1AC6A /* SLFButton.h */,
+				912AC09A1910218300E1AC6A /* SLFButton.m */,
 				9116CC7319059FEF00211F8C /* Images */,
 				9116CC69190589CB00211F8C /* SLFTableViewController.h */,
 				9116CC6A190589CB00211F8C /* SLFTableViewController.m */,
@@ -339,11 +359,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				9116CC4B1905898200211F8C /* SLFAppDelegate.m in Sources */,
+				912AC09519101BE400E1AC6A /* SLFSettingIcon.m in Sources */,
 				911D6363190ECABD008323DE /* SLFNewNavigationController.m in Sources */,
 				9116CC6E19058A2100211F8C /* SLFTableViewCell.m in Sources */,
 				9116CC471905898200211F8C /* main.m in Sources */,
 				9116CC6B190589CB00211F8C /* SLFTableViewController.m in Sources */,
 				91284F4C1906D4DE00D5C8B5 /* SLFLoginViewController.m in Sources */,
+				912AC09819101C1F00E1AC6A /* SLFSettingViewController.m in Sources */,
+				912AC09B1910218300E1AC6A /* SLFButton.m in Sources */,
+				912AC09E1910344E00E1AC6A /* SLFButton1.m in Sources */,
 				912AC092190FDD2F00E1AC6A /* SLFSignUpViewController.m in Sources */,
 				91284F4F1906D50900D5C8B5 /* SLFCameraViewController.m in Sources */,
 			);

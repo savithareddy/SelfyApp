@@ -35,13 +35,15 @@
     UINavigationController *navController;
        PFUser *user = [PFUser currentUser];
     NSString *username = user.username;
-   username=nil;
+   //username=nil;
     if(username == nil)
     {
          navController = [[UINavigationController alloc]initWithRootViewController:[[SLFLoginViewController alloc]initWithNibName:nil bundle:nil]];
         navController.navigationBarHidden =NO;
     }else{
-        navController = [[UINavigationController alloc]initWithRootViewController:[[SLFTableViewController alloc] initWithStyle:UITableViewStylePlain]];
+       navController = [[UINavigationController alloc]initWithRootViewController:[[SLFTableViewController alloc] initWithStyle:UITableViewStylePlain]];
+        //navController = [[UINavigationController alloc]initWithRootViewController:[[SLFTableViewController alloc] initWithNibName:nil bundle:nil]];
+
         }
    
     self.window.rootViewController = navController;
