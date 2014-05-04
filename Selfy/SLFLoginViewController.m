@@ -45,12 +45,13 @@
         
         usernameTitle = [[UILabel alloc]initWithFrame:CGRectMake(80, 180, 100, 20)];
         usernameTitle.backgroundColor = [UIColor lightGrayColor];
-        userName.autocapitalizationType = NO;
         usernameTitle.text = @"Username :";
         [self.view addSubview:usernameTitle];
         
         userName = [[UITextField alloc]initWithFrame:CGRectMake(80, 210, 200, 30)];
         userName.backgroundColor = [UIColor whiteColor];
+        userName.autocapitalizationType = UITextAutocapitalizationTypeNone;
+        userName.autocorrectionType = UITextAutocorrectionTypeNo;
         [self.view addSubview:userName];
         
         passwordTitle = [[UILabel alloc]initWithFrame:CGRectMake(80, 250, 100, 20)];
@@ -83,12 +84,9 @@
 -(void) showSignUp
 {
     SLFSignUpViewController *signUpVC = [[SLFSignUpViewController alloc]initWithNibName:nil bundle:nil];
-    //UINavigationController *navController2 = [[UINavigationController alloc]initWithRootViewController:viewController2];
     SLFNewNavigationController *nc = [[SLFNewNavigationController alloc]initWithRootViewController:signUpVC];
     nc.navigationBar.barTintColor = [UIColor blueColor];
     nc.navigationBar.translucent = NO;
-    //[self.navigationController pushViewController:viewController2 animated:YES];
-    //    self.navigationItem.leftBarButtonItem = self.editButtonItem;
     [self.navigationController  presentViewController:nc animated:YES completion:^{
         [self hideKeyboard];
     }];
@@ -97,13 +95,6 @@
 }
 -(void) pressSubmit
 {
-    
-    //    SLFTableViewController *viewController1 = [[SLFTableViewController alloc] initWithStyle:UITableViewStylePlain];
-    //    [self.navigationController pushViewController:viewController1 animated:YES];
-    //       userName.text = @"";
-    //    password.text = @"";
-    //    [userName resignFirstResponder];
-    //    [password resignFirstResponder];
     
     UIView *alertCircle = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width+50, self.view.frame.size.height-40)];
     alertCircle.backgroundColor = [UIColor grayColor];
@@ -161,7 +152,7 @@
                                                             delegate:self cancelButtonTitle:@"Try Another Username" otherButtonTitles:nil];
              
              [alert show];
-             //[self.view addSubview:alert];
+             
              
          }
      }];

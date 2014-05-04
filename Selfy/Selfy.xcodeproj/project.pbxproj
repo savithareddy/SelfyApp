@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		91020A5E1915CFAC001A4AF0 /* SLFFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91020A5D1915CFAC001A4AF0 /* SLFFilterViewController.m */; };
+		91020A651915E2AC001A4AF0 /* SLFPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91020A641915E2AC001A4AF0 /* SLFPhotoViewController.m */; };
+		91020A681915E2C0001A4AF0 /* SLFControlsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91020A671915E2C0001A4AF0 /* SLFControlsViewController.m */; };
+		91020A6B1915E2D8001A4AF0 /* SLFHsbViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91020A6A1915E2D8001A4AF0 /* SLFHsbViewController.m */; };
+		91020A6E1915E2EB001A4AF0 /* SLFBlurViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91020A6D1915E2EB001A4AF0 /* SLFBlurViewController.m */; };
+		91020A721915EB0C001A4AF0 /* HSB.png in Resources */ = {isa = PBXBuildFile; fileRef = 91020A6F1915EB0C001A4AF0 /* HSB.png */; };
+		91020A731915EB0C001A4AF0 /* filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 91020A701915EB0C001A4AF0 /* filter.png */; };
+		91020A741915EB0C001A4AF0 /* blur.png in Resources */ = {isa = PBXBuildFile; fileRef = 91020A711915EB0C001A4AF0 /* blur.png */; };
+		91020A761915F305001A4AF0 /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = 91020A751915F305001A4AF0 /* next.png */; };
+		91020A781915F30B001A4AF0 /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 91020A771915F30B001A4AF0 /* share.png */; };
+		91020A7A1915F311001A4AF0 /* gallery.png in Resources */ = {isa = PBXBuildFile; fileRef = 91020A791915F311001A4AF0 /* gallery.png */; };
 		910B979119060450008F10C7 /* Avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 910B979019060450008F10C7 /* Avatar.png */; };
 		910B9793190620AC008F10C7 /* Images.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 910B9792190620AC008F10C7 /* Images.jpeg */; };
 		9116CC3B1905898200211F8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9116CC3A1905898200211F8C /* Foundation.framework */; };
@@ -55,6 +66,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		91020A5C1915CFAC001A4AF0 /* SLFFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFFilterViewController.h; sourceTree = "<group>"; };
+		91020A5D1915CFAC001A4AF0 /* SLFFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFFilterViewController.m; sourceTree = "<group>"; };
+		91020A631915E2AC001A4AF0 /* SLFPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFPhotoViewController.h; sourceTree = "<group>"; };
+		91020A641915E2AC001A4AF0 /* SLFPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFPhotoViewController.m; sourceTree = "<group>"; };
+		91020A661915E2C0001A4AF0 /* SLFControlsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFControlsViewController.h; sourceTree = "<group>"; };
+		91020A671915E2C0001A4AF0 /* SLFControlsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFControlsViewController.m; sourceTree = "<group>"; };
+		91020A691915E2D8001A4AF0 /* SLFHsbViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFHsbViewController.h; sourceTree = "<group>"; };
+		91020A6A1915E2D8001A4AF0 /* SLFHsbViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFHsbViewController.m; sourceTree = "<group>"; };
+		91020A6C1915E2EB001A4AF0 /* SLFBlurViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFBlurViewController.h; sourceTree = "<group>"; };
+		91020A6D1915E2EB001A4AF0 /* SLFBlurViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFBlurViewController.m; sourceTree = "<group>"; };
+		91020A6F1915EB0C001A4AF0 /* HSB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HSB.png; path = ../../../../Desktop/HSB.png; sourceTree = "<group>"; };
+		91020A701915EB0C001A4AF0 /* filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = filter.png; path = ../../../../Desktop/filter.png; sourceTree = "<group>"; };
+		91020A711915EB0C001A4AF0 /* blur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blur.png; path = ../../../../Desktop/blur.png; sourceTree = "<group>"; };
+		91020A751915F305001A4AF0 /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = next.png; path = ../../../../Desktop/next.png; sourceTree = "<group>"; };
+		91020A771915F30B001A4AF0 /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = share.png; path = ../../../../Desktop/share.png; sourceTree = "<group>"; };
+		91020A791915F311001A4AF0 /* gallery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gallery.png; path = ../../../../Desktop/gallery.png; sourceTree = "<group>"; };
 		910B979019060450008F10C7 /* Avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Avatar.png; sourceTree = "<group>"; };
 		910B9792190620AC008F10C7 /* Images.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Images.jpeg; sourceTree = "<group>"; };
 		9116CC371905898200211F8C /* Selfy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Selfy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,26 +165,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		91020A5F1915DFCA001A4AF0 /* Page1 */ = {
+			isa = PBXGroup;
+			children = (
+				91A0670A19114B4500F0A540 /* SLFSignUpViewController.h */,
+				91A0670B19114B4500F0A540 /* SLFSignUpViewController.m */,
+				91284F4A1906D4DE00D5C8B5 /* SLFLoginViewController.h */,
+				91284F4B1906D4DE00D5C8B5 /* SLFLoginViewController.m */,
+			);
+			name = Page1;
+			sourceTree = "<group>";
+		};
+		91020A601915DFD6001A4AF0 /* Page2 */ = {
+			isa = PBXGroup;
+			children = (
+				91A0670719112E5800F0A540 /* SLFSettingsViewController.h */,
+				91A0670819112E5800F0A540 /* SLFSettingsViewController.m */,
+				9116CC69190589CB00211F8C /* SLFTableViewController.h */,
+				9116CC6A190589CB00211F8C /* SLFTableViewController.m */,
+				9116CC6C19058A2100211F8C /* SLFTableViewCell.h */,
+				9116CC6D19058A2100211F8C /* SLFTableViewCell.m */,
+				91A0670419112E1600F0A540 /* SLFSettingsButton.h */,
+				91A0670519112E1600F0A540 /* SLFSettingsButton.m */,
+			);
+			name = Page2;
+			sourceTree = "<group>";
+		};
+		91020A611915DFDF001A4AF0 /* Page3 */ = {
+			isa = PBXGroup;
+			children = (
+				91020A5C1915CFAC001A4AF0 /* SLFFilterViewController.h */,
+				91020A5D1915CFAC001A4AF0 /* SLFFilterViewController.m */,
+				91020A631915E2AC001A4AF0 /* SLFPhotoViewController.h */,
+				91020A641915E2AC001A4AF0 /* SLFPhotoViewController.m */,
+				91020A661915E2C0001A4AF0 /* SLFControlsViewController.h */,
+				91020A671915E2C0001A4AF0 /* SLFControlsViewController.m */,
+				91020A691915E2D8001A4AF0 /* SLFHsbViewController.h */,
+				91020A6A1915E2D8001A4AF0 /* SLFHsbViewController.m */,
+				91020A6C1915E2EB001A4AF0 /* SLFBlurViewController.h */,
+				91020A6D1915E2EB001A4AF0 /* SLFBlurViewController.m */,
+			);
+			name = Page3;
+			sourceTree = "<group>";
+		};
+		91020A621915DFE9001A4AF0 /* Page4 */ = {
+			isa = PBXGroup;
+			children = (
+				91284F4D1906D50900D5C8B5 /* SLFCameraViewController.h */,
+				91284F4E1906D50900D5C8B5 /* SLFCameraViewController.m */,
+			);
+			name = Page4;
+			sourceTree = "<group>";
+		};
 		9116CC2E1905898200211F8C = {
 			isa = PBXGroup;
 			children = (
-				91A0670419112E1600F0A540 /* SLFSettingsButton.h */,
-				91A0670519112E1600F0A540 /* SLFSettingsButton.m */,
-				91A0670719112E5800F0A540 /* SLFSettingsViewController.h */,
-				91A0670819112E5800F0A540 /* SLFSettingsViewController.m */,
-				91A0670A19114B4500F0A540 /* SLFSignUpViewController.h */,
-				91A0670B19114B4500F0A540 /* SLFSignUpViewController.m */,
+				91020A621915DFE9001A4AF0 /* Page4 */,
+				91020A611915DFDF001A4AF0 /* Page3 */,
+				91020A601915DFD6001A4AF0 /* Page2 */,
+				91020A5F1915DFCA001A4AF0 /* Page1 */,
 				9116CC7319059FEF00211F8C /* Images */,
-				9116CC69190589CB00211F8C /* SLFTableViewController.h */,
-				9116CC6A190589CB00211F8C /* SLFTableViewController.m */,
 				911D6361190ECABD008323DE /* SLFNewNavigationController.h */,
 				911D6362190ECABD008323DE /* SLFNewNavigationController.m */,
-				91284F4A1906D4DE00D5C8B5 /* SLFLoginViewController.h */,
-				91284F4B1906D4DE00D5C8B5 /* SLFLoginViewController.m */,
-				91284F4D1906D50900D5C8B5 /* SLFCameraViewController.h */,
-				91284F4E1906D50900D5C8B5 /* SLFCameraViewController.m */,
-				9116CC6C19058A2100211F8C /* SLFTableViewCell.h */,
-				9116CC6D19058A2100211F8C /* SLFTableViewCell.m */,
 				9116CC401905898200211F8C /* Selfy */,
 				9116CC591905898200211F8C /* SelfyTests */,
 				9116CC391905898200211F8C /* Frameworks */,
@@ -238,6 +307,12 @@
 		9116CC7319059FEF00211F8C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				91020A791915F311001A4AF0 /* gallery.png */,
+				91020A771915F30B001A4AF0 /* share.png */,
+				91020A751915F305001A4AF0 /* next.png */,
+				91020A6F1915EB0C001A4AF0 /* HSB.png */,
+				91020A701915EB0C001A4AF0 /* filter.png */,
+				91020A711915EB0C001A4AF0 /* blur.png */,
 				9126C1B3190A9EC9004F7413 /* dice.png */,
 				9126C1B4190A9EC9004F7413 /* squares.png */,
 				91284F501906E96400D5C8B5 /* camera.jpeg */,
@@ -326,10 +401,16 @@
 				9116CC451905898200211F8C /* InfoPlist.strings in Resources */,
 				910B9793190620AC008F10C7 /* Images.jpeg in Resources */,
 				9126C1B5190A9EC9004F7413 /* dice.png in Resources */,
+				91020A761915F305001A4AF0 /* next.png in Resources */,
+				91020A7A1915F311001A4AF0 /* gallery.png in Resources */,
 				9126C1B6190A9EC9004F7413 /* squares.png in Resources */,
+				91020A731915EB0C001A4AF0 /* filter.png in Resources */,
 				910B979119060450008F10C7 /* Avatar.png in Resources */,
+				91020A781915F30B001A4AF0 /* share.png in Resources */,
+				91020A741915EB0C001A4AF0 /* blur.png in Resources */,
 				9116CC4D1905898200211F8C /* Images.xcassets in Resources */,
 				91284F511906E96400D5C8B5 /* camera.jpeg in Resources */,
+				91020A721915EB0C001A4AF0 /* HSB.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,14 +430,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				91A0670619112E1600F0A540 /* SLFSettingsButton.m in Sources */,
+				91020A651915E2AC001A4AF0 /* SLFPhotoViewController.m in Sources */,
 				9116CC4B1905898200211F8C /* SLFAppDelegate.m in Sources */,
 				911D6363190ECABD008323DE /* SLFNewNavigationController.m in Sources */,
 				9116CC6E19058A2100211F8C /* SLFTableViewCell.m in Sources */,
 				9116CC471905898200211F8C /* main.m in Sources */,
 				9116CC6B190589CB00211F8C /* SLFTableViewController.m in Sources */,
+				91020A681915E2C0001A4AF0 /* SLFControlsViewController.m in Sources */,
+				91020A6E1915E2EB001A4AF0 /* SLFBlurViewController.m in Sources */,
 				91A0670C19114B4500F0A540 /* SLFSignUpViewController.m in Sources */,
 				91A0670919112E5800F0A540 /* SLFSettingsViewController.m in Sources */,
 				91284F4C1906D4DE00D5C8B5 /* SLFLoginViewController.m in Sources */,
+				91020A5E1915CFAC001A4AF0 /* SLFFilterViewController.m in Sources */,
+				91020A6B1915E2D8001A4AF0 /* SLFHsbViewController.m in Sources */,
 				91284F4F1906D50900D5C8B5 /* SLFCameraViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

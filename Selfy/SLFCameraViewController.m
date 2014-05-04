@@ -15,34 +15,41 @@
 
 #import "SLFCameraViewController.h"
 #import <Parse/Parse.h>
+#import "SLFTableViewController.h"
+#import "SLFNewNavigationController.h"
+#import "SLFPhotoViewController.h"
 
-@interface SLFCameraViewController () <UITextViewDelegate>
+@interface SLFCameraViewController () <UITextViewDelegate,SLFPhotoViewControllerDelegate>
 
 @end
 
 @implementation SLFCameraViewController
 {
-    UIView *imageArea;
-    UIImageView *image;
+    //UIView *imageArea;
+   // UIImageView *image;
     UITextView *captionField;
     UIButton *submitButton1;
-    UIView *header;
-    UILabel *nameLabel;
-    UIButton *settingButton;
-    UIButton *cancelButton;
+   // UIView *header;
+   // UILabel *nameLabel;
+   // UIButton *settingButton;
+    //UIButton *cancelButton;
     UIView *newForm;
     UIImageView *imageView;
+    SLFPhotoViewController *photoVC;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        
-        
-        
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapScreen)];
         [self.view addGestureRecognizer:tap];
+        
+        photoVC = [[SLFPhotoViewController alloc] initWithNibName:nil bundle:nil];
+        photoVC.delegate = self;
+        photoVC.view.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+        [self.view addSubview:photoVC.view];
+
     }
     return self;
 }
@@ -59,10 +66,11 @@
 -(void) textViewDidBeginEditing:(UITextView *)textView
 {
     [UIView animateWithDuration:0. animations:^{
-        newForm.frame = CGRectMake(0, -KB_HEIGHT, 320, self.view.frame.size.height);
+        newForm.frame = CGRectMake(0, 0,320, self.view.frame.size.height);
     }];
     //[textView resignFirstResponder];
 }
+//-KB_HEIGHT
 
 //- (BOOL)textViewShouldReturn:(UITextView *)textView
 //{
@@ -114,8 +122,8 @@
     
     ///////
     
-    imageView = [[UIImageView alloc]initWithFrame:CGRectMake(20, 0, 280, 280)];
-    imageView.image = [UIImage imageNamed:@"squares"];
+    imageView = [[UIImageView alloc]initWithFrame:CGRectMake(10, 100, 60, 60)];
+    imageView.image = photoVC.imageToFilter;
     [newForm addSubview:imageView];
     
     //    image = [[UIImageView alloc] initWithFrame:CGRectMake(90, 90, 130, 130)];
@@ -148,14 +156,14 @@
     ////    [newForm addSubview:imageArea];
     
     
-    captionField = [[UITextView alloc]initWithFrame:CGRectMake(20, 300, 280, 70)];
+    captionField = [[UITextView alloc]initWithFrame:CGRectMake(80, 100, 230, 60)];
     captionField.backgroundColor = [UIColor whiteColor];
     captionField.keyboardType = UIKeyboardTypeTwitter;
     [newForm addSubview:captionField];
     
-    submitButton1 = [[UIButton alloc] initWithFrame:CGRectMake(110, 400, 100, 30)];
+    submitButton1 = [[UIButton alloc] initWithFrame:CGRectMake(110, 200, 100, 30)];
     submitButton1.backgroundColor = [UIColor blueColor];
-    [submitButton1 setTitle:@"SUBMIT" forState:UIControlStateNormal];
+    [submitButton1 setTitle:@"UPLOAD" forState:UIControlStateNormal];
     [submitButton1 addTarget:self action:@selector(pressSubmit1) forControlEvents:UIControlEventTouchUpInside];
     [newForm addSubview:submitButton1];
     
@@ -167,10 +175,18 @@
 {
     captionField.text =@"";
     [captionField resignFirstResponder];
-    [self.navigationController dismissViewControllerAnimated:YES completion:^{
+    self.navigationController.navigationBarHidden = NO;
+    self.navigationController.viewControllers = @[[[SLFTableViewController alloc] initWithNibName:nil bundle:nil]];
+    self.navigationController.navigationBar.barTintColor = [UIColor blueColor];
+    self.navigationController.navigationBar.translucent = NO;
+   // [self.navigationController dismissViewControllerAnimated:YES completion:^{
         
-    }];
+   // }];
     
+}
+-(void) updateCurrentImageWithFilteredImage:(UIImage *)image
+{
+    photoVC.imageToFilter = image;
 }
 
 - (void)viewDidLoad

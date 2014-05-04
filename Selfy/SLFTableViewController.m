@@ -8,7 +8,7 @@
 
 #import "SLFTableViewController.h"
 #import "SLFTableViewCell.h"
-#import "SLFCameraViewController.h"
+#import "SLFPhotoViewController.h"
 #import "SLFNewNavigationController.h"
 #import <Parse/Parse.h>
 #import "SLFSettingsButton.h"
@@ -20,10 +20,6 @@
 
 @implementation SLFTableViewController
 {
-//    UIView *header;
-//    UILabel *nameLabel;
-//    UIButton *settingButton;
-//    UIButton *addButton;
     NSArray *selfies; // changing mutable to array since while parsing we r nor adding to the array but resettting only
     SLFSettingsButton *settingsButtonView;
     SLFSettingsViewController * settingsVC;
@@ -74,13 +70,11 @@
         settingsButtonView.tintColor  = [UIColor blueColor];
         settingsButtonView.toggleTintColor = [UIColor redColor];
         [settingsButtonView addTarget:self action:@selector(openSettings) forControlEvents:UIControlEventTouchUpInside];
-        
-        
         UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc]initWithCustomView:settingsButtonView];
         self.navigationItem.leftBarButtonItem = settingsButton;
        
          
- self.tableView.rowHeight = self.tableView.frame.size.width-40;
+        self.tableView.rowHeight = self.tableView.frame.size.width-40;
         
         
     }
@@ -117,32 +111,6 @@
 {
     [super viewDidLoad];
 
-    
-//    header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
-//    header.backgroundColor = [UIColor lightGrayColor];
-//    header.alpha = 0.8;
-//    [self.view addSubview:header];
-//    
-//    nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(130, 10, 60, 30)];
-//    nameLabel.text = @"SELFY";
-//    nameLabel.textColor = [UIColor blackColor];
-//    nameLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:15];
-//    [self.view addSubview:nameLabel];
-//    
-//    settingButton = [[UIButton alloc]initWithFrame:CGRectMake(20, 10, 30, 30)];
-//    settingButton.backgroundColor = [UIColor blackColor];
-//    [settingButton setTitle:@" S " forState:UIControlStateNormal];
-//    [settingButton addTarget:self action:@selector(pressSubmit) forControlEvents:UIControlEventTouchUpInside];
-//    settingButton.layer.cornerRadius = 15;
-//    [self.view addSubview:settingButton];
-//    
-//    addButton = [[UIButton alloc]initWithFrame:CGRectMake(270, 10, 30, 30)];
-//    addButton.backgroundColor = [UIColor blackColor];
-//    addButton.layer.cornerRadius = 15;
-//    [addButton setTitle:@" + " forState:UIControlStateNormal];
-//    [addButton addTarget:self action:@selector(pressAdd) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:addButton];
-    
 }
 
 -(void) viewWillAppear:(BOOL)animated
@@ -151,22 +119,22 @@
     
 }
 
--(void) pressSubmit
-{
-    
-}
 -(void)openNewSelfy
 {
-    SLFCameraViewController *viewController2 = [[SLFCameraViewController alloc]initWithNibName:nil bundle:nil];
-    //UINavigationController *navController2 = [[UINavigationController alloc]initWithRootViewController:viewController2];
-    SLFNewNavigationController *nc = [[SLFNewNavigationController alloc]initWithRootViewController:viewController2];
-    nc.navigationBar.barTintColor = [UIColor blueColor];
-    nc.navigationBar.translucent = NO;
-    //[self.navigationController pushViewController:viewController2 animated:YES];
-//    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    [self.navigationController  presentViewController:nc animated:YES completion:^{
-        
-    }];
+    self.navigationController.navigationBarHidden = NO;
+    self.navigationController.viewControllers = @[[[SLFPhotoViewController alloc] initWithNibName:nil bundle:nil]];
+    self.navigationController.navigationBar.barTintColor = [UIColor blueColor];
+    self.navigationController.navigationBar.translucent = NO;
+//    SLFPhotoViewController *viewController2 = [[SLFPhotoViewController alloc]initWithNibName:nil bundle:nil];
+//    //UINavigationController *navController2 = [[UINavigationController alloc]initWithRootViewController:viewController2];
+//    SLFNewNavigationController *nc = [[SLFNewNavigationController alloc]initWithRootViewController:viewController2];
+//   nc.navigationBar.barTintColor = [UIColor blueColor];
+//   // nc.navigationBar.translucent = NO;
+//    //[self.navigationController pushViewController:viewController2 animated:YES];
+//    //    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+//    [self.navigationController  presentViewController:nc animated:YES completion:^{
+//        
+//    }];
 
 }
 - (void)didReceiveMemoryWarning
@@ -239,9 +207,5 @@
 //}
 
 
-//-(BOOL) prefersStatusBarHidden
-//{
-//    return YES;
-//}
 
 @end
