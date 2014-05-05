@@ -79,7 +79,7 @@ SLFControlsViewControllerDelegate,SLFBlurViewControllerDelegate,SLFHsbViewContro
     //libraryButtonView.tintColor = [UIColor blueColor];
     [libraryButtonView addTarget:self action:@selector(choosePhoto) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *libraryButtonItem = [[UIBarButtonItem alloc] initWithCustomView:libraryButtonView];
-    self.navigationItem.leftBarButtonItem = libraryButtonItem;
+    //self.navigationItem.leftBarButtonItem = libraryButtonItem;
     
     UIButton *backButtonView = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
     [backButtonView setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
@@ -96,9 +96,9 @@ SLFControlsViewControllerDelegate,SLFBlurViewControllerDelegate,SLFHsbViewContro
     //libraryButtonView.tintColor = [UIColor blueColor];
     [nextButtonView addTarget:self action:@selector(gotoNext) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *nextButtonItem = [[UIBarButtonItem alloc] initWithCustomView:nextButtonView];
-   // self.navigationItem.rightBarButtonItem = nextButtonItem;
+    self.navigationItem.rightBarButtonItem = nextButtonItem;
     
-    self.navigationItem.rightBarButtonItems = [[NSArray alloc] initWithObjects:nextButtonItem, backButtonItem, nil];
+    self.navigationItem.leftBarButtonItems = [[NSArray alloc] initWithObjects:backButtonItem, libraryButtonItem, nil];
 
 
     
