@@ -36,7 +36,7 @@
     [super viewDidLoad];
     
     controlsView = [[UIView alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT-140, SCREEN_WIDTH, 40)];
-    controlsView.backgroundColor = [UIColor whiteColor];
+    controlsView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:controlsView ];
     
     filtersButton = [[UIButton alloc] initWithFrame:CGRectMake(39,5,30,30)];

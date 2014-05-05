@@ -121,20 +121,20 @@
 
 -(void)openNewSelfy
 {
-    self.navigationController.navigationBarHidden = NO;
+    //self.navigationController.navigationBarHidden = NO;
     self.navigationController.viewControllers = @[[[SLFPhotoViewController alloc] initWithNibName:nil bundle:nil]];
-    self.navigationController.navigationBar.barTintColor = [UIColor blueColor];
-    self.navigationController.navigationBar.translucent = NO;
-//    SLFPhotoViewController *viewController2 = [[SLFPhotoViewController alloc]initWithNibName:nil bundle:nil];
+   // self.navigationController.navigationBar.barTintColor = [UIColor blueColor];
+    //self.navigationController.navigationBar.translucent = NO;
+   //SLFPhotoViewController *viewController2 = [[SLFPhotoViewController alloc]initWithNibName:nil bundle:nil];
 //    //UINavigationController *navController2 = [[UINavigationController alloc]initWithRootViewController:viewController2];
-//    SLFNewNavigationController *nc = [[SLFNewNavigationController alloc]initWithRootViewController:viewController2];
+//  SLFNewNavigationController *nc = [[SLFNewNavigationController alloc]initWithRootViewController:viewController2];
 //   nc.navigationBar.barTintColor = [UIColor blueColor];
 //   // nc.navigationBar.translucent = NO;
 //    //[self.navigationController pushViewController:viewController2 animated:YES];
 //    //    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-//    [self.navigationController  presentViewController:nc animated:YES completion:^{
-//        
-//    }];
+ // [self.navigationController  presentViewController:nc animated:YES completion:^{
+      
+ // }];
 
 }
 - (void)didReceiveMemoryWarning

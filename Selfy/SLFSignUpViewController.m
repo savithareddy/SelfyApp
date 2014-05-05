@@ -28,7 +28,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.view.backgroundColor=[UIColor whiteColor];
+        self.view.backgroundColor=[UIColor clearColor];
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
         [self.view addGestureRecognizer:tap];
         
@@ -69,9 +69,10 @@
         [signinForm addSubview:textField];
         
     }
-    signinAvatar = [[UIImageView alloc]initWithFrame:CGRectMake(60, 300, 220, 30)];
-    signinAvatar.backgroundColor = [UIColor whiteColor];
-    [signinForm addSubview:signinAvatar];
+//    signinAvatar = [[UIImageView alloc]initWithFrame:CGRectMake(0, 100, 50, 50)];
+//    signinAvatar.layer.cornerRadius =  25;
+//    signinAvatar.backgroundColor = [UIColor whiteColor];
+//    [signinForm addSubview:signinAvatar];
     
     UIButton *submitButton = [[UIButton alloc] initWithFrame:CGRectMake(0,[fieldNames count] * 50, 280, 40)];
     submitButton.backgroundColor = [UIColor blueColor];
@@ -109,6 +110,7 @@
     user.email = ((UITextField *)fields[3]).text;
     user[@"displayName"] = ((UITextField *)fields[2]).text;
     user[@"avatar"] = imageFile;
+    signinAvatar.image = avatarImage;
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if(error == nil)
         {

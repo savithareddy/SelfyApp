@@ -33,6 +33,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
+        self.view.backgroundColor = [UIColor clearColor];
         loginImage = [[UIImageView alloc] initWithFrame:CGRectMake(120, 130, 30, 30)];
         loginImage.image = [UIImage imageNamed:@"Avatar.png"];
         [self.view addSubview:loginImage];
@@ -43,36 +44,36 @@
         loginHeader.font = [UIFont fontWithName:@"Helvetica Neue" size:15];
         [self.view addSubview:loginHeader];
         
-        usernameTitle = [[UILabel alloc]initWithFrame:CGRectMake(80, 180, 100, 20)];
+        usernameTitle = [[UILabel alloc]initWithFrame:CGRectMake(50, 180, 100, 20)];
         usernameTitle.backgroundColor = [UIColor lightGrayColor];
         usernameTitle.text = @"Username :";
         [self.view addSubview:usernameTitle];
         
-        userName = [[UITextField alloc]initWithFrame:CGRectMake(80, 210, 200, 30)];
+        userName = [[UITextField alloc]initWithFrame:CGRectMake(50, 210, 240, 30)];
         userName.backgroundColor = [UIColor whiteColor];
         userName.autocapitalizationType = UITextAutocapitalizationTypeNone;
         userName.autocorrectionType = UITextAutocorrectionTypeNo;
         [self.view addSubview:userName];
         
-        passwordTitle = [[UILabel alloc]initWithFrame:CGRectMake(80, 250, 100, 20)];
+        passwordTitle = [[UILabel alloc]initWithFrame:CGRectMake(50, 250, 100, 20)];
         passwordTitle.backgroundColor = [UIColor lightGrayColor];
         passwordTitle.text = @"Password :";
         [self.view addSubview:passwordTitle];
         
-        password = [[UITextField alloc]initWithFrame:CGRectMake(80, 280, 200, 30)];
+        password = [[UITextField alloc]initWithFrame:CGRectMake(50, 280, 240, 30)];
         password.backgroundColor = [UIColor whiteColor];
         password.secureTextEntry = YES;
         [self.view addSubview:password];
         
-        submitButton = [[UIButton alloc] initWithFrame:CGRectMake(130, 330, 70, 30)];
+        submitButton = [[UIButton alloc] initWithFrame:CGRectMake(50, 330, 240, 30)];
         submitButton.backgroundColor = [UIColor blueColor];
         [submitButton setTitle:@"SignIN" forState:UIControlStateNormal];
         [submitButton addTarget:self action:@selector(pressSubmit) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:submitButton];
         
-        UIButton *submitButtonSignin = [[UIButton alloc] initWithFrame:CGRectMake(130, 380, 70, 30)];
+        UIButton *submitButtonSignin = [[UIButton alloc] initWithFrame:CGRectMake(50, 380, 240, 30)];
         submitButtonSignin.backgroundColor = [UIColor blueColor];
-        submitButtonSignin.layer.cornerRadius = 15;
+        //submitButtonSignin.layer.cornerRadius = 15;
         [submitButtonSignin setTitle:@"SignUP" forState:UIControlStateNormal];
         [submitButtonSignin addTarget:self action:@selector(showSignUp) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:submitButtonSignin];
@@ -172,6 +173,11 @@
 {
     [super viewDidLoad];
     
+}
+
+-(BOOL) prefersStatusBarHidden
+{
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning

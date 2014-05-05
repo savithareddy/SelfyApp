@@ -8,6 +8,57 @@
 
 #import <UIKit/UIKit.h>
 
+@class SLFCameraViewController;
+
 @interface SLFCameraViewController : UIViewController
 
+@property (nonatomic) SLFCameraViewController *cameraImage;
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//@protocol SLFCameraViewControllerDelegate;
+//
+//@interface SLFCameraViewController : UIViewController
+//
+//@property (nonatomic,assign) id<SLFCameraViewControllerDelegate> delegate;
+//
+//@property (nonatomic) UIImage *imageToCamera;
+//
+//@end
+//
+//@protocol SLFCameraViewControllerDelegate <NSObject>
+//
+////-(void) updateCurrentImageWithFilteredImage:(UIImage *)image;
+//
+//@end
+//
+
+
+
+

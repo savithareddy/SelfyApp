@@ -13,6 +13,7 @@
 #import "SLFHsbViewController.h"
 #import "SLFCameraViewController.h"
 #import "SLFNewNavigationController.h"
+#import "SLFTableViewController.h"
 
 
 
@@ -31,6 +32,7 @@ SLFControlsViewControllerDelegate,SLFBlurViewControllerDelegate,SLFHsbViewContro
     SLFBlurViewController *blurVC;
     SLFHsbViewController *colorVC;
     
+    
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -45,7 +47,7 @@ SLFControlsViewControllerDelegate,SLFBlurViewControllerDelegate,SLFHsbViewContro
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor clearColor];
     imageView = [[UIImageView alloc] initWithFrame:self.view.frame];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     [self.view addSubview:imageView];
@@ -68,12 +70,35 @@ SLFControlsViewControllerDelegate,SLFBlurViewControllerDelegate,SLFHsbViewContro
 //    nextButton.backgroundColor = [UIColor grayColor];
 //    [navBar addSubview:nextButton];
     
-    UIBarButtonItem *libraryButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"gallery"] style:UIBarButtonItemStylePlain target:self action:@selector(choosePhoto)];
-        self.navigationItem.leftBarButtonItem = libraryButton;
     
-    UIBarButtonItem *nextButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"next"] style:UIBarButtonItemStylePlain target:self action:@selector(gotoNext)];
-    self.navigationItem.rightBarButtonItem = nextButton;
 
+    
+    UIButton *libraryButtonView = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+    [libraryButtonView setImage:[UIImage imageNamed:@"gallery"] forState:UIControlStateNormal];
+    libraryButtonView.backgroundColor = [UIColor blueColor];
+    //libraryButtonView.tintColor = [UIColor blueColor];
+    [libraryButtonView addTarget:self action:@selector(choosePhoto) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *libraryButtonItem = [[UIBarButtonItem alloc] initWithCustomView:libraryButtonView];
+    self.navigationItem.leftBarButtonItem = libraryButtonItem;
+    
+    UIButton *backButtonView = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+    [backButtonView setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+    backButtonView.backgroundColor = [UIColor blueColor];
+    //libraryButtonView.tintColor = [UIColor blueColor];
+    [backButtonView addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButtonView];
+   // self.navigationItem.centerBarButtonItem = backButtonItem;
+    
+    
+    UIButton *nextButtonView = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+    [nextButtonView setImage:[UIImage imageNamed:@"next"] forState:UIControlStateNormal];
+    nextButtonView.backgroundColor = [UIColor blueColor];
+    //libraryButtonView.tintColor = [UIColor blueColor];
+    [nextButtonView addTarget:self action:@selector(gotoNext) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *nextButtonItem = [[UIBarButtonItem alloc] initWithCustomView:nextButtonView];
+   // self.navigationItem.rightBarButtonItem = nextButtonItem;
+    
+    self.navigationItem.rightBarButtonItems = [[NSArray alloc] initWithObjects:nextButtonItem, backButtonItem, nil];
 
 
     
@@ -95,6 +120,7 @@ SLFControlsViewControllerDelegate,SLFBlurViewControllerDelegate,SLFHsbViewContro
     colorVC = [[SLFHsbViewController alloc] initWithNibName:nil bundle:nil];
     colorVC.delegate = self;
     colorVC.view.frame = CGRectMake(0, SCREEN_HEIGHT-100, SCREEN_WIDTH, 100);
+    
     
 }
 -(void) selectFilter
@@ -122,16 +148,22 @@ SLFControlsViewControllerDelegate,SLFBlurViewControllerDelegate,SLFHsbViewContro
 -(void)updateCurrentImageWithFilteredImage:(UIImage *)image
 {
     imageView.image = image;
+    NSLog(@" selected image filter %@", imageView.image);
     blurVC.imageToFilter = image;
+    NSLog(@" selected image blur %@", image);
     colorVC.currentImage  = image;
+    NSLog(@" selected image HSB %@", colorVC.currentImage);
+    
 }
 
 -(void) setOriginalImage:(UIImage *)originalImage
 {
     _originalImage=originalImage;
+    
     filterVC.imageToFilter = originalImage;
     imageView.image=originalImage;
 }
+
 
 -(void) choosePhoto
 {
@@ -154,7 +186,7 @@ SLFControlsViewControllerDelegate,SLFBlurViewControllerDelegate,SLFHsbViewContro
     
     
     self.originalImage = info[UIImagePickerControllerOriginalImage];
-    
+    //NSLog(@" original Image is %@", self.originalImage);
     
     [picker dismissViewControllerAnimated:YES completion:^{
         
@@ -171,17 +203,47 @@ SLFControlsViewControllerDelegate,SLFBlurViewControllerDelegate,SLFHsbViewContro
     //    CGImageRelease(cgImgRef);
     //    imageView.image = newImage;
 }
+
 -(void) gotoNext
 {
-    self.navigationController.navigationBarHidden = NO;
-    self.navigationController.viewControllers = @[[[SLFCameraViewController alloc] initWithNibName:nil bundle:nil]];
-    self.navigationController.navigationBar.barTintColor = [UIColor blueColor];
-    self.navigationController.navigationBar.translucent = NO;
+//    self.navigationController.navigationBarHidden = NO;
+//    self.navigationController.viewControllers = @[[[SLFCameraViewController alloc] initWithNibName:nil bundle:nil]];
+//    self.navigationController.navigationBar.barTintColor = [UIColor blueColor];
+//    self.navigationController.navigationBar.translucent = NO;
+    
+    SLFCameraViewController *caption = [[SLFCameraViewController alloc] initWithNibName:nil bundle:nil];
+    SLFNewNavigationController *navControl = [[SLFNewNavigationController alloc] initWithRootViewController:caption];
+     navControl.navigationBar.barTintColor = [UIColor blueColor];
+     //navControl.navigationBarHidden =YES;
+   // imageView.image = self.originalImage;
+    UIImage * camImage = imageView.image;
+    NSLog(@" copied image is : %@", camImage);
+    caption.cameraImage = camImage;
+    
+    [self.navigationController presentViewController:navControl animated:YES completion:^{
+        
+    }];
+    
+}
 
-//    SLFCameraViewController *caption = [[SLFCameraViewController alloc] initWithNibName:nil bundle:nil];
-//    SLFNewNavigationController *navControl = [[SLFNewNavigationController alloc] initWithRootViewController:caption];
-//     //navControl.navigationBarHidden =YES;
-//    [self.navigationController pushViewController:navControl animated:YES];
+-(void) goBack
+{
+    SLFTableViewController *tc = [[SLFTableViewController alloc] initWithStyle:UITableViewStylePlain];
+    SLFNewNavigationController *navC = [[SLFNewNavigationController alloc] initWithRootViewController:tc];
+    //navC.navigationBar.barTintColor = [UIColor blueColor];
+    [self.navigationController presentViewController:navC animated:YES completion:^{
+        
+    }];
+
+   
+//    self.navigationController.navigationBarHidden = NO;
+//    self.navigationController.viewControllers =@[[[SLFTableViewController alloc] initWithNibName:nil bundle:nil]];
+//    self.navigationController.navigationBar.barTintColor = [UIColor blueColor];
+//    self.navigationController.navigationBar.translucent = NO;
+//    [self.navigationController dismissViewControllerAnimated:YES completion:^{
+//        
+//    }];
+
 }
 
 
@@ -191,10 +253,10 @@ SLFControlsViewControllerDelegate,SLFBlurViewControllerDelegate,SLFHsbViewContro
     
 }
 
--(BOOL) prefersStatusBarHidden
-{
-    return YES;
-}
+//-(BOOL) prefersStatusBarHidden
+//{
+//    return YES;
+//}
 
 
 @end

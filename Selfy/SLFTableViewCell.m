@@ -7,7 +7,8 @@
 //
 
 #import "SLFTableViewCell.h"
-#import <parse/Parse.h>
+#import <Parse/Parse.h>
+
 
 
 @implementation SLFTableViewCell
@@ -39,8 +40,18 @@
         avatarView.layer.masksToBounds=YES;
         [self.contentView addSubview:avatarView];
         
+        UIButton *shareButton =[[UIButton alloc] initWithFrame:CGRectMake(270, 230, 30, 30)];
+        [shareButton setImage: [UIImage imageNamed:@"share"] forState : UIControlStateNormal];
+        [shareButton addTarget:self action:@selector(pressShare) forControlEvents:UIControlEventTouchUpInside];
+        [self.contentView addSubview:shareButton];
+        
     }
     return self;
+}
+
+-(void) pressShare
+{
+    
 }
 
 -(void) setSelfyInfo:(PFObject *)selfyInfo //chnaged from NSDictionary to PFObject// does not ike literals
@@ -82,12 +93,13 @@
     [user fetchIfNeededInBackgroundWithBlock:^(PFObject *object, NSError *error) {
         NSLog(@"%@", object);
         PFFile *avatarFile = [selfyInfo objectForKey:@"avatar"];
-        [avatarFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-            avatarView.image  = [UIImage imageWithData:data];
+      [avatarFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+            UIImage *avatar = [UIImage imageWithData:data];
+            avatarView.image = avatar;
         }];
     }];
 //    UIImage *avatarImage = [UIImage imageNamed:@"Avatar.png"];
-//    avatarView.image = avatarImage;
+//   avatarView.image = avatarImage;
     }
 
 

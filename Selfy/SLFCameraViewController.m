@@ -17,9 +17,10 @@
 #import <Parse/Parse.h>
 #import "SLFTableViewController.h"
 #import "SLFNewNavigationController.h"
-#import "SLFPhotoViewController.h"
+#import "SLFCameraViewController.h"
 
-@interface SLFCameraViewController () <UITextViewDelegate,SLFPhotoViewControllerDelegate>
+@interface SLFCameraViewController () <UITextViewDelegate>
+
 
 @end
 
@@ -35,8 +36,7 @@
     //UIButton *cancelButton;
     UIView *newForm;
     UIImageView *imageView;
-    SLFPhotoViewController *photoVC;
-}
+   }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,11 +45,6 @@
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapScreen)];
         [self.view addGestureRecognizer:tap];
         
-        photoVC = [[SLFPhotoViewController alloc] initWithNibName:nil bundle:nil];
-        photoVC.delegate = self;
-        photoVC.view.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-        [self.view addSubview:photoVC.view];
-
     }
     return self;
 }
@@ -78,41 +73,6 @@
 //    return YES;
 //}
 
--(void) pressSubmit1
-{
-    //captionField.text =@"";
-    //    [captionField resignFirstResponder];
-    
-    //UIImage *images = [UIImage imageNamed:@"squares.png"];
-    //NSData *imageData = UIImagePNGRepresentation(images);
-    
-    //connect current user to newSelfy as parent : parse "relational data" -/objects/relational data/ to create a parent
-    
-    
-    
-    // PFFile *imageFile = [PFFile fileWithName:@"squares.png" data:imageData]; // cool squares also can be written instead of squares.png
-    
-    NSData *imageData = UIImagePNGRepresentation(imageView.image);
-    PFFile *imageFile = [PFFile fileWithName:@"image_squares" data:imageData];//image can be called as any //used later
-    
-    PFObject *userPhoto = [PFObject objectWithClassName:@"UserSelfy"];
-    
-    userPhoto[@"caption"]= captionField.text; //to use data from textfield send to parse
-    userPhoto[@"imageFile"] = imageFile; // not creating a row here but
-    //userPhoto[@"imageName"] = @"SelfyApp in Progress!";
-    //userPhoto[@"imageFile"] = imageFile;
-    //    [userPhoto saveInBackground];
-    userPhoto[@"parent"] = [PFUser currentUser];
-    
-    
-    [userPhoto saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        NSLog(@"%u",succeeded);
-        [self pressCancel1];
-    }];
-    
-    
-    
-}
 
 -(void) createForm // check
 {
@@ -123,7 +83,8 @@
     ///////
     
     imageView = [[UIImageView alloc]initWithFrame:CGRectMake(10, 100, 60, 60)];
-    imageView.image = photoVC.imageToFilter;
+    //imageView.image = photoVC.camImage;
+    imageView.backgroundColor = [UIColor whiteColor];
     [newForm addSubview:imageView];
     
     //    image = [[UIImageView alloc] initWithFrame:CGRectMake(90, 90, 130, 130)];
@@ -161,13 +122,52 @@
     captionField.keyboardType = UIKeyboardTypeTwitter;
     [newForm addSubview:captionField];
     
-    submitButton1 = [[UIButton alloc] initWithFrame:CGRectMake(110, 200, 100, 30)];
+    submitButton1 = [[UIButton alloc] initWithFrame:CGRectMake(50, 200, 240, 30)];
     submitButton1.backgroundColor = [UIColor blueColor];
     [submitButton1 setTitle:@"UPLOAD" forState:UIControlStateNormal];
     [submitButton1 addTarget:self action:@selector(pressSubmit1) forControlEvents:UIControlEventTouchUpInside];
     [newForm addSubview:submitButton1];
     
     captionField.delegate = self;
+    
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel)];
+    cancelButton.tintColor = [UIColor whiteColor];
+    self.navigationItem.rightBarButtonItem =cancelButton;
+
+}
+
+-(void) pressSubmit1
+{
+    //captionField.text =@"";
+    //    [captionField resignFirstResponder];
+    
+    //UIImage *images = [UIImage imageNamed:@"squares.png"];
+    //NSData *imageData = UIImagePNGRepresentation(images);
+    
+    //connect current user to newSelfy as parent : parse "relational data" -/objects/relational data/ to create a parent
+    
+    
+    
+    // PFFile *imageFile = [PFFile fileWithName:@"squares.png" data:imageData]; // cool squares also can be written instead of squares.png
+    
+    NSData *imageData = UIImagePNGRepresentation(imageView.image);
+    PFFile *imageFile = [PFFile fileWithName:@"image" data:imageData];//image can be called as any //used later
+    
+    PFObject *userPhoto = [PFObject objectWithClassName:@"UserSelfy"];
+    
+    userPhoto[@"caption"]= captionField.text; //to use data from textfield send to parse
+    userPhoto[@"imageFile"] = imageFile; // not creating a row here but
+    //userPhoto[@"imageName"] = @"SelfyApp in Progress!";
+    //userPhoto[@"imageFile"] = imageFile;
+    //    [userPhoto saveInBackground];
+    userPhoto[@"parent"] = [PFUser currentUser];
+    
+    
+    [userPhoto saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        NSLog(@"%u",succeeded);
+        [self pressCancel1];
+    }];
+
 }
 
 
@@ -176,27 +176,37 @@
     captionField.text =@"";
     [captionField resignFirstResponder];
     self.navigationController.navigationBarHidden = NO;
-    self.navigationController.viewControllers = @[[[SLFTableViewController alloc] initWithNibName:nil bundle:nil]];
+    self.navigationController.viewControllers =@[[[SLFTableViewController alloc] initWithNibName:nil bundle:nil]];
     self.navigationController.navigationBar.barTintColor = [UIColor blueColor];
     self.navigationController.navigationBar.translucent = NO;
-   // [self.navigationController dismissViewControllerAnimated:YES completion:^{
+    [self.navigationController dismissViewControllerAnimated:YES completion:^{
         
-   // }];
+    }];
     
 }
--(void) updateCurrentImageWithFilteredImage:(UIImage *)image
+
+-(void) cancel
 {
-    photoVC.imageToFilter = image;
+    [self.navigationController dismissViewControllerAnimated:YES completion:^{
+        
+    }];
 }
 
-- (void)viewDidLoad
+
+- (void)viewDidAppear:(BOOL)animated
 {
-    [super viewDidLoad];
+    [super viewDidAppear:animated];
+    
 }
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
     [self createForm];
+  //  SLFCameraViewController *cameraImage = self.cameraImage;
+    imageView.image = self.cameraImage;
+    
 }
 
 - (void)didReceiveMemoryWarning

@@ -8,20 +8,52 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol SLFPhotoViewControllerDelegate;
-
 @interface SLFPhotoViewController : UIViewController
 
-@property (nonatomic,assign) id<SLFPhotoViewControllerDelegate> delegate;
-
-@property (nonatomic) UIImage *imageToFilter;
-
-
 @end
 
-@protocol SLFPhotoViewControllerDelegate <NSObject>
 
--(void) updateCurrentImageWithFilteredImage:(UIImage *)image;
 
-@end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//@class SLFPhotoViewController;
+//
+//@protocol SLFPhotoViewControllerDelegate;
+//
+//@interface SLFPhotoViewController : UIViewController
+//
+//@property (nonatomic,assign) id<SLFPhotoViewControllerDelegate> delegate;
+//
+//@property (nonatomic) UIImage *imageToFilter;
+//
+//
+//@end
+//
+//@protocol SLFPhotoViewControllerDelegate <NSObject>
+//
+//-(void) sendFrom:(SLFPhotoViewController *) controller image:(UIImage *)originalImage;
+//
+//@end
+
 

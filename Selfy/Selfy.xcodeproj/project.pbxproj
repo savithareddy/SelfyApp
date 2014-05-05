@@ -50,6 +50,7 @@
 		91284F4C1906D4DE00D5C8B5 /* SLFLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91284F4B1906D4DE00D5C8B5 /* SLFLoginViewController.m */; };
 		91284F4F1906D50900D5C8B5 /* SLFCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91284F4E1906D50900D5C8B5 /* SLFCameraViewController.m */; };
 		91284F511906E96400D5C8B5 /* camera.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 91284F501906E96400D5C8B5 /* camera.jpeg */; };
+		919DD4EB19172E6E00696D04 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 919DD4EA19172E6E00696D04 /* back.png */; };
 		91A0670619112E1600F0A540 /* SLFSettingsButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A0670519112E1600F0A540 /* SLFSettingsButton.m */; };
 		91A0670919112E5800F0A540 /* SLFSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A0670819112E5800F0A540 /* SLFSettingsViewController.m */; };
 		91A0670C19114B4500F0A540 /* SLFSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A0670B19114B4500F0A540 /* SLFSignUpViewController.m */; };
@@ -123,6 +124,7 @@
 		91284F4D1906D50900D5C8B5 /* SLFCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFCameraViewController.h; sourceTree = "<group>"; };
 		91284F4E1906D50900D5C8B5 /* SLFCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFCameraViewController.m; sourceTree = "<group>"; };
 		91284F501906E96400D5C8B5 /* camera.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = camera.jpeg; sourceTree = "<group>"; };
+		919DD4EA19172E6E00696D04 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back.png; path = ../../../../Desktop/back.png; sourceTree = "<group>"; };
 		91A0670419112E1600F0A540 /* SLFSettingsButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFSettingsButton.h; sourceTree = "<group>"; };
 		91A0670519112E1600F0A540 /* SLFSettingsButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFSettingsButton.m; sourceTree = "<group>"; };
 		91A0670719112E5800F0A540 /* SLFSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFSettingsViewController.h; sourceTree = "<group>"; };
@@ -194,6 +196,8 @@
 		91020A611915DFDF001A4AF0 /* Page3 */ = {
 			isa = PBXGroup;
 			children = (
+				91284F4D1906D50900D5C8B5 /* SLFCameraViewController.h */,
+				91284F4E1906D50900D5C8B5 /* SLFCameraViewController.m */,
 				91020A5C1915CFAC001A4AF0 /* SLFFilterViewController.h */,
 				91020A5D1915CFAC001A4AF0 /* SLFFilterViewController.m */,
 				91020A631915E2AC001A4AF0 /* SLFPhotoViewController.h */,
@@ -208,19 +212,9 @@
 			name = Page3;
 			sourceTree = "<group>";
 		};
-		91020A621915DFE9001A4AF0 /* Page4 */ = {
-			isa = PBXGroup;
-			children = (
-				91284F4D1906D50900D5C8B5 /* SLFCameraViewController.h */,
-				91284F4E1906D50900D5C8B5 /* SLFCameraViewController.m */,
-			);
-			name = Page4;
-			sourceTree = "<group>";
-		};
 		9116CC2E1905898200211F8C = {
 			isa = PBXGroup;
 			children = (
-				91020A621915DFE9001A4AF0 /* Page4 */,
 				91020A611915DFDF001A4AF0 /* Page3 */,
 				91020A601915DFD6001A4AF0 /* Page2 */,
 				91020A5F1915DFCA001A4AF0 /* Page1 */,
@@ -307,6 +301,7 @@
 		9116CC7319059FEF00211F8C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				919DD4EA19172E6E00696D04 /* back.png */,
 				91020A791915F311001A4AF0 /* gallery.png */,
 				91020A771915F30B001A4AF0 /* share.png */,
 				91020A751915F305001A4AF0 /* next.png */,
@@ -402,6 +397,7 @@
 				910B9793190620AC008F10C7 /* Images.jpeg in Resources */,
 				9126C1B5190A9EC9004F7413 /* dice.png in Resources */,
 				91020A761915F305001A4AF0 /* next.png in Resources */,
+				919DD4EB19172E6E00696D04 /* back.png in Resources */,
 				91020A7A1915F311001A4AF0 /* gallery.png in Resources */,
 				9126C1B6190A9EC9004F7413 /* squares.png in Resources */,
 				91020A731915EB0C001A4AF0 /* filter.png in Resources */,
