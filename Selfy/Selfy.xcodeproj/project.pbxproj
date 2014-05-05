@@ -12,12 +12,6 @@
 		91020A681915E2C0001A4AF0 /* SLFControlsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91020A671915E2C0001A4AF0 /* SLFControlsViewController.m */; };
 		91020A6B1915E2D8001A4AF0 /* SLFHsbViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91020A6A1915E2D8001A4AF0 /* SLFHsbViewController.m */; };
 		91020A6E1915E2EB001A4AF0 /* SLFBlurViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91020A6D1915E2EB001A4AF0 /* SLFBlurViewController.m */; };
-		91020A721915EB0C001A4AF0 /* HSB.png in Resources */ = {isa = PBXBuildFile; fileRef = 91020A6F1915EB0C001A4AF0 /* HSB.png */; };
-		91020A731915EB0C001A4AF0 /* filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 91020A701915EB0C001A4AF0 /* filter.png */; };
-		91020A741915EB0C001A4AF0 /* blur.png in Resources */ = {isa = PBXBuildFile; fileRef = 91020A711915EB0C001A4AF0 /* blur.png */; };
-		91020A761915F305001A4AF0 /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = 91020A751915F305001A4AF0 /* next.png */; };
-		91020A781915F30B001A4AF0 /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 91020A771915F30B001A4AF0 /* share.png */; };
-		91020A7A1915F311001A4AF0 /* gallery.png in Resources */ = {isa = PBXBuildFile; fileRef = 91020A791915F311001A4AF0 /* gallery.png */; };
 		910B979119060450008F10C7 /* Avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 910B979019060450008F10C7 /* Avatar.png */; };
 		910B9793190620AC008F10C7 /* Images.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 910B9792190620AC008F10C7 /* Images.jpeg */; };
 		9116CC3B1905898200211F8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9116CC3A1905898200211F8C /* Foundation.framework */; };
@@ -50,7 +44,6 @@
 		91284F4C1906D4DE00D5C8B5 /* SLFLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91284F4B1906D4DE00D5C8B5 /* SLFLoginViewController.m */; };
 		91284F4F1906D50900D5C8B5 /* SLFCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91284F4E1906D50900D5C8B5 /* SLFCameraViewController.m */; };
 		91284F511906E96400D5C8B5 /* camera.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 91284F501906E96400D5C8B5 /* camera.jpeg */; };
-		919DD4EB19172E6E00696D04 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 919DD4EA19172E6E00696D04 /* back.png */; };
 		91A0670619112E1600F0A540 /* SLFSettingsButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A0670519112E1600F0A540 /* SLFSettingsButton.m */; };
 		91A0670919112E5800F0A540 /* SLFSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A0670819112E5800F0A540 /* SLFSettingsViewController.m */; };
 		91A0670C19114B4500F0A540 /* SLFSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A0670B19114B4500F0A540 /* SLFSignUpViewController.m */; };
@@ -77,12 +70,6 @@
 		91020A6A1915E2D8001A4AF0 /* SLFHsbViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFHsbViewController.m; sourceTree = "<group>"; };
 		91020A6C1915E2EB001A4AF0 /* SLFBlurViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFBlurViewController.h; sourceTree = "<group>"; };
 		91020A6D1915E2EB001A4AF0 /* SLFBlurViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFBlurViewController.m; sourceTree = "<group>"; };
-		91020A6F1915EB0C001A4AF0 /* HSB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HSB.png; path = ../../../../Desktop/HSB.png; sourceTree = "<group>"; };
-		91020A701915EB0C001A4AF0 /* filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = filter.png; path = ../../../../Desktop/filter.png; sourceTree = "<group>"; };
-		91020A711915EB0C001A4AF0 /* blur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blur.png; path = ../../../../Desktop/blur.png; sourceTree = "<group>"; };
-		91020A751915F305001A4AF0 /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = next.png; path = ../../../../Desktop/next.png; sourceTree = "<group>"; };
-		91020A771915F30B001A4AF0 /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = share.png; path = ../../../../Desktop/share.png; sourceTree = "<group>"; };
-		91020A791915F311001A4AF0 /* gallery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gallery.png; path = ../../../../Desktop/gallery.png; sourceTree = "<group>"; };
 		910B979019060450008F10C7 /* Avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Avatar.png; sourceTree = "<group>"; };
 		910B9792190620AC008F10C7 /* Images.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Images.jpeg; sourceTree = "<group>"; };
 		9116CC371905898200211F8C /* Selfy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Selfy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,7 +111,6 @@
 		91284F4D1906D50900D5C8B5 /* SLFCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFCameraViewController.h; sourceTree = "<group>"; };
 		91284F4E1906D50900D5C8B5 /* SLFCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFCameraViewController.m; sourceTree = "<group>"; };
 		91284F501906E96400D5C8B5 /* camera.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = camera.jpeg; sourceTree = "<group>"; };
-		919DD4EA19172E6E00696D04 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back.png; path = ../../../../Desktop/back.png; sourceTree = "<group>"; };
 		91A0670419112E1600F0A540 /* SLFSettingsButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFSettingsButton.h; sourceTree = "<group>"; };
 		91A0670519112E1600F0A540 /* SLFSettingsButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFSettingsButton.m; sourceTree = "<group>"; };
 		91A0670719112E5800F0A540 /* SLFSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFSettingsViewController.h; sourceTree = "<group>"; };
@@ -301,13 +287,6 @@
 		9116CC7319059FEF00211F8C /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				919DD4EA19172E6E00696D04 /* back.png */,
-				91020A791915F311001A4AF0 /* gallery.png */,
-				91020A771915F30B001A4AF0 /* share.png */,
-				91020A751915F305001A4AF0 /* next.png */,
-				91020A6F1915EB0C001A4AF0 /* HSB.png */,
-				91020A701915EB0C001A4AF0 /* filter.png */,
-				91020A711915EB0C001A4AF0 /* blur.png */,
 				9126C1B3190A9EC9004F7413 /* dice.png */,
 				9126C1B4190A9EC9004F7413 /* squares.png */,
 				91284F501906E96400D5C8B5 /* camera.jpeg */,
@@ -396,17 +375,10 @@
 				9116CC451905898200211F8C /* InfoPlist.strings in Resources */,
 				910B9793190620AC008F10C7 /* Images.jpeg in Resources */,
 				9126C1B5190A9EC9004F7413 /* dice.png in Resources */,
-				91020A761915F305001A4AF0 /* next.png in Resources */,
-				919DD4EB19172E6E00696D04 /* back.png in Resources */,
-				91020A7A1915F311001A4AF0 /* gallery.png in Resources */,
 				9126C1B6190A9EC9004F7413 /* squares.png in Resources */,
-				91020A731915EB0C001A4AF0 /* filter.png in Resources */,
 				910B979119060450008F10C7 /* Avatar.png in Resources */,
-				91020A781915F30B001A4AF0 /* share.png in Resources */,
-				91020A741915EB0C001A4AF0 /* blur.png in Resources */,
 				9116CC4D1905898200211F8C /* Images.xcassets in Resources */,
 				91284F511906E96400D5C8B5 /* camera.jpeg in Resources */,
-				91020A721915EB0C001A4AF0 /* HSB.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

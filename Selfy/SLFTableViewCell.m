@@ -92,7 +92,7 @@
     PFUser *user = [selfyInfo objectForKey:@"parent"];
     [user fetchIfNeededInBackgroundWithBlock:^(PFObject *object, NSError *error) {
         NSLog(@"%@", object);
-        PFFile *avatarFile = [selfyInfo objectForKey:@"avatar"];
+        PFFile *avatarFile = [object objectForKey:@"avatar"];
       [avatarFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
             UIImage *avatar = [UIImage imageWithData:data];
             avatarView.image = avatar;
