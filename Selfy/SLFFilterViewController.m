@@ -81,7 +81,7 @@
         UIButton *filterButton = [[UIButton alloc] initWithFrame:CGRectMake(x, 10, wh, wh)];
         filterButton.tag = i;
         filterButton.backgroundColor=[UIColor whiteColor];
-        //[filterButton setImage:imageView.image forState:UIControlStateNormal];
+//        [filterButton setImage:self.imageToFilter forState:UIControlStateNormal];
         [filterButton addTarget:self action:@selector(switchFilter:) forControlEvents:UIControlEventTouchUpInside];
         [filterButtons addObject:filterButton];
         [scrollView addSubview:filterButton];
@@ -89,6 +89,9 @@
     NSLog(@"%d",(int)self.view.frame.size.height);
     scrollView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     scrollView.contentSize = CGSizeMake((wh+10) * [filterNames count] + 10, self.view.frame.size.height);
+    
+//    self.imageToFilter = self.imageToFilter;
+    [self setImageToFilter:self.imageToFilter];
 }
 
 

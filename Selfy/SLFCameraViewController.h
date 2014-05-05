@@ -12,7 +12,7 @@
 
 @interface SLFCameraViewController : UIViewController
 
-@property (nonatomic) SLFCameraViewController *cameraImage;
+@property (nonatomic) UIImage *cameraImage;
 @end
 
 

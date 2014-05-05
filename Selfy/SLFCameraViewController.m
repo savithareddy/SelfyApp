@@ -173,12 +173,12 @@
 
 -(void) pressCancel1
 {
-    captionField.text =@"";
-    [captionField resignFirstResponder];
-    self.navigationController.navigationBarHidden = NO;
-    self.navigationController.viewControllers =@[[[SLFTableViewController alloc] initWithNibName:nil bundle:nil]];
-    self.navigationController.navigationBar.barTintColor = [UIColor blueColor];
-    self.navigationController.navigationBar.translucent = NO;
+//    captionField.text =@"";
+//    [captionField resignFirstResponder];
+//    self.navigationController.navigationBarHidden = NO;
+//    self.navigationController.viewControllers =@[[[SLFTableViewController alloc] initWithNibName:nil bundle:nil]];
+//    self.navigationController.navigationBar.barTintColor = [UIColor blueColor];
+//    self.navigationController.navigationBar.translucent = NO;
     [self.navigationController dismissViewControllerAnimated:YES completion:^{
         
     }];

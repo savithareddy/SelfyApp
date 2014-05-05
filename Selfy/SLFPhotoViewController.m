@@ -212,28 +212,25 @@ SLFControlsViewControllerDelegate,SLFBlurViewControllerDelegate,SLFHsbViewContro
 //    self.navigationController.navigationBar.translucent = NO;
     
     SLFCameraViewController *caption = [[SLFCameraViewController alloc] initWithNibName:nil bundle:nil];
-    SLFNewNavigationController *navControl = [[SLFNewNavigationController alloc] initWithRootViewController:caption];
-     navControl.navigationBar.barTintColor = [UIColor blueColor];
-     //navControl.navigationBarHidden =YES;
    // imageView.image = self.originalImage;
     UIImage * camImage = imageView.image;
     NSLog(@" copied image is : %@", camImage);
     caption.cameraImage = camImage;
     
-    [self.navigationController presentViewController:navControl animated:YES completion:^{
-        
-    }];
+    [self.navigationController pushViewController:caption animated:YES];
     
 }
 
 -(void) goBack
 {
-    SLFTableViewController *tc = [[SLFTableViewController alloc] initWithStyle:UITableViewStylePlain];
-    SLFNewNavigationController *navC = [[SLFNewNavigationController alloc] initWithRootViewController:tc];
-    //navC.navigationBar.barTintColor = [UIColor blueColor];
-    [self.navigationController presentViewController:navC animated:YES completion:^{
-        
-    }];
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    
+//    SLFTableViewController *tc = [[SLFTableViewController alloc] initWithStyle:UITableViewStylePlain];
+//    SLFNewNavigationController *navC = [[SLFNewNavigationController alloc] initWithRootViewController:tc];
+//    //navC.navigationBar.barTintColor = [UIColor blueColor];
+//    [self.navigationController presentViewController:navC animated:YES completion:^{
+//        
+//    }];
 
    
 //    self.navigationController.navigationBarHidden = NO;
