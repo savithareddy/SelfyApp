@@ -143,11 +143,15 @@
         NSString *filterName = [filterNames objectAtIndex:filterButton.tag];
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, (unsigned long)NULL),^{
+            
             UIImage * smallImage = [self shrinkImage:imageToFilter maxWH:wh *2];
             UIImage *image = [self filterImage:smallImage filterName:filterName];
+            
             dispatch_async(dispatch_get_main_queue(), ^(void){
+                
                 [filterButton setImage:image forState:UIControlStateNormal];
                 filterButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
+                
             });
         });
     }
