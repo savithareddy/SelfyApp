@@ -152,7 +152,6 @@
     
     NSData *imageData = UIImagePNGRepresentation(imageView.image);
     PFFile *imageFile = [PFFile fileWithName:@"image" data:imageData];//image can be called as any //used later
-    
     PFObject *userPhoto = [PFObject objectWithClassName:@"UserSelfy"];
     
     userPhoto[@"caption"]= captionField.text; //to use data from textfield send to parse
@@ -168,10 +167,13 @@
         [self pressCancel1];
     }];
 
+    
+    
 }
 
 
 -(void) pressCancel1
+
 {
 //    captionField.text =@"";
 //    [captionField resignFirstResponder];
