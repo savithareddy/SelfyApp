@@ -42,6 +42,12 @@
 		91284F4C1906D4DE00D5C8B5 /* SLFLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91284F4B1906D4DE00D5C8B5 /* SLFLoginViewController.m */; };
 		91284F4F1906D50900D5C8B5 /* SLFCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91284F4E1906D50900D5C8B5 /* SLFCameraViewController.m */; };
 		91284F511906E96400D5C8B5 /* camera.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 91284F501906E96400D5C8B5 /* camera.jpeg */; };
+		91962815195E58D2006642BF /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 91962814195E58D2006642BF /* back.png */; };
+		91962817195E58D8006642BF /* gallery.png in Resources */ = {isa = PBXBuildFile; fileRef = 91962816195E58D8006642BF /* gallery.png */; };
+		91962819195E58DF006642BF /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = 91962818195E58DF006642BF /* next.png */; };
+		9196281B195E59C7006642BF /* filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 9196281A195E59C7006642BF /* filter.png */; };
+		9196281D195E59CE006642BF /* HSB.png in Resources */ = {isa = PBXBuildFile; fileRef = 9196281C195E59CE006642BF /* HSB.png */; };
+		9196281F195E59D7006642BF /* blur.png in Resources */ = {isa = PBXBuildFile; fileRef = 9196281E195E59D7006642BF /* blur.png */; };
 		91A0670619112E1600F0A540 /* SLFSettingsButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A0670519112E1600F0A540 /* SLFSettingsButton.m */; };
 		91A0670919112E5800F0A540 /* SLFSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A0670819112E5800F0A540 /* SLFSettingsViewController.m */; };
 		91A0670C19114B4500F0A540 /* SLFSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A0670B19114B4500F0A540 /* SLFSignUpViewController.m */; };
@@ -107,6 +113,12 @@
 		91284F4D1906D50900D5C8B5 /* SLFCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFCameraViewController.h; sourceTree = "<group>"; };
 		91284F4E1906D50900D5C8B5 /* SLFCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFCameraViewController.m; sourceTree = "<group>"; };
 		91284F501906E96400D5C8B5 /* camera.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = camera.jpeg; sourceTree = "<group>"; };
+		91962814195E58D2006642BF /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		91962816195E58D8006642BF /* gallery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gallery.png; sourceTree = "<group>"; };
+		91962818195E58DF006642BF /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next.png; sourceTree = "<group>"; };
+		9196281A195E59C7006642BF /* filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filter.png; sourceTree = "<group>"; };
+		9196281C195E59CE006642BF /* HSB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HSB.png; sourceTree = "<group>"; };
+		9196281E195E59D7006642BF /* blur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blur.png; sourceTree = "<group>"; };
 		91A0670419112E1600F0A540 /* SLFSettingsButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFSettingsButton.h; sourceTree = "<group>"; };
 		91A0670519112E1600F0A540 /* SLFSettingsButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFSettingsButton.m; sourceTree = "<group>"; };
 		91A0670719112E5800F0A540 /* SLFSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFSettingsViewController.h; sourceTree = "<group>"; };
@@ -283,6 +295,12 @@
 		9116CC7319059FEF00211F8C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9196281E195E59D7006642BF /* blur.png */,
+				9196281C195E59CE006642BF /* HSB.png */,
+				9196281A195E59C7006642BF /* filter.png */,
+				91962818195E58DF006642BF /* next.png */,
+				91962816195E58D8006642BF /* gallery.png */,
+				91962814195E58D2006642BF /* back.png */,
 				91284F501906E96400D5C8B5 /* camera.jpeg */,
 				910B9792190620AC008F10C7 /* Images.jpeg */,
 				910B979019060450008F10C7 /* Avatar.png */,
@@ -367,10 +385,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				9116CC451905898200211F8C /* InfoPlist.strings in Resources */,
+				9196281D195E59CE006642BF /* HSB.png in Resources */,
 				910B9793190620AC008F10C7 /* Images.jpeg in Resources */,
+				91962819195E58DF006642BF /* next.png in Resources */,
+				91962815195E58D2006642BF /* back.png in Resources */,
+				9196281B195E59C7006642BF /* filter.png in Resources */,
 				910B979119060450008F10C7 /* Avatar.png in Resources */,
 				9116CC4D1905898200211F8C /* Images.xcassets in Resources */,
 				91284F511906E96400D5C8B5 /* camera.jpeg in Resources */,
+				91962817195E58D8006642BF /* gallery.png in Resources */,
+				9196281F195E59D7006642BF /* blur.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

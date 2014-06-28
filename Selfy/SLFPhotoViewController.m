@@ -75,7 +75,7 @@ SLFControlsViewControllerDelegate,SLFBlurViewControllerDelegate,SLFHsbViewContro
     
     UIButton *libraryButtonView = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
     [libraryButtonView setImage:[UIImage imageNamed:@"gallery"] forState:UIControlStateNormal];
-    libraryButtonView.backgroundColor = [UIColor blueColor];
+    libraryButtonView.backgroundColor = [UIColor whiteColor];
     //libraryButtonView.tintColor = [UIColor blueColor];
     [libraryButtonView addTarget:self action:@selector(choosePhoto) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *libraryButtonItem = [[UIBarButtonItem alloc] initWithCustomView:libraryButtonView];
@@ -83,7 +83,7 @@ SLFControlsViewControllerDelegate,SLFBlurViewControllerDelegate,SLFHsbViewContro
     
     UIButton *backButtonView = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
     [backButtonView setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
-    backButtonView.backgroundColor = [UIColor blueColor];
+    backButtonView.backgroundColor = [UIColor whiteColor];
     //libraryButtonView.tintColor = [UIColor blueColor];
     [backButtonView addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButtonView];
@@ -92,7 +92,7 @@ SLFControlsViewControllerDelegate,SLFBlurViewControllerDelegate,SLFHsbViewContro
     
     UIButton *nextButtonView = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
     [nextButtonView setImage:[UIImage imageNamed:@"next"] forState:UIControlStateNormal];
-    nextButtonView.backgroundColor = [UIColor blueColor];
+    nextButtonView.backgroundColor = [UIColor whiteColor];
     //libraryButtonView.tintColor = [UIColor blueColor];
     [nextButtonView addTarget:self action:@selector(gotoNext) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *nextButtonItem = [[UIBarButtonItem alloc] initWithCustomView:nextButtonView];
@@ -250,10 +250,10 @@ SLFControlsViewControllerDelegate,SLFBlurViewControllerDelegate,SLFHsbViewContro
     
 }
 
-//-(BOOL) prefersStatusBarHidden
-//{
-//    return YES;
-//}
+-(BOOL) prefersStatusBarHidden
+{
+    return NO;
+}
 
 
 @end
