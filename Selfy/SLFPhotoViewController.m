@@ -162,6 +162,8 @@ SLFControlsViewControllerDelegate,SLFBlurViewControllerDelegate,SLFHsbViewContro
     
     filterVC.imageToFilter = originalImage;
     imageView.image=originalImage;
+    NSUInteger imgSize  = CGImageGetHeight(originalImage.CGImage) * CGImageGetBytesPerRow(originalImage.CGImage);
+    NSLog(@" size of the original image %lu",imgSize);
 }
 
 
@@ -174,6 +176,7 @@ SLFControlsViewControllerDelegate,SLFBlurViewControllerDelegate,SLFHsbViewContro
     imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     
     //imagePicker.allowsEditing = YES;
+    
     
     [self presentViewController:imagePicker animated:YES completion:nil];
 }
@@ -215,8 +218,10 @@ SLFControlsViewControllerDelegate,SLFBlurViewControllerDelegate,SLFHsbViewContro
    // imageView.image = self.originalImage;
     UIImage * camImage = imageView.image;
     NSLog(@" copied image is : %@", camImage);
-    caption.cameraImage = camImage;
     
+    NSUInteger imgSize  = CGImageGetHeight(camImage.CGImage) * CGImageGetBytesPerRow(camImage.CGImage);
+    NSLog(@" size of the image %lu",imgSize);
+    caption.cameraImage = camImage;
     [self.navigationController pushViewController:caption animated:YES];
     
 }
